@@ -1,0 +1,159 @@
+html.dark {
+  --el-color-primary: #d7a36b;
+  --el-color-primary-light-3: #e0b488;
+  --el-color-primary-light-5: #e7c5a2;
+  --el-color-primary-dark-2: #b9864f;
+
+  --el-bg-color: #171d21;
+  --el-bg-color-page: #151a1e;
+  --el-bg-color-overlay: #1a2126;
+  --el-fill-color-blank: #151a1e;
+  --el-fill-color-light: rgba(236, 233, 225, 0.05);
+  --el-fill-color: rgba(236, 233, 225, 0.08);
+
+  --el-text-color-primary: #ece9e1;
+  --el-text-color-regular: #c7c3b9;
+  --el-text-color-secondary: #8e9498;
+  --el-text-color-placeholder: #697074;
+  --el-text-color-disabled: #5a6165;
+
+  --el-border-color: rgba(236, 233, 225, 0.12);
+  --el-border-color-light: rgba(236, 233, 225, 0.09);
+  --el-border-color-lighter: rgba(236, 233, 225, 0.07);
+  --el-border-color-extra-light: rgba(236, 233, 225, 0.05);
+  --el-border-color-dark: rgba(236, 233, 225, 0.18);
+
+  --el-border-radius-base: 2px;
+  --el-border-radius-small: 2px;
+  --el-border-radius-round: 2px;
+
+  --el-font-family: var(--sans);
+  --el-mask-color: rgba(6, 9, 11, 0.92);
+  --el-transition-duration: 0.3s;
+}
+
+.el-button {
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  --el-button-outline-color: var(--accent);
+}
+
+.el-button:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Tags */
+.tag.el-tag {
+  --el-tag-bg-color: transparent;
+  --el-tag-border-color: var(--line-2);
+  --el-tag-text-color: var(--paper-2);
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 1px;
+  background: transparent;
+  border-color: var(--line-2);
+  color: var(--paper-2);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Dialog */
+.project-dialog.el-dialog {
+  --el-dialog-bg-color: var(--bg-soft);
+  --el-dialog-padding-primary: 0;
+  margin: 4vh auto;
+  padding: 0;
+  background: var(--bg-soft);
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55);
+}
+
+.project-dialog .el-dialog__header {
+  display: none;
+}
+
+.project-dialog .el-dialog__body {
+  padding: 0;
+  color: var(--paper-2);
+}
+
+.project-dialog .el-dialog__headerbtn {
+  display: none;
+}
+
+.project-dialog .el-dialog__headerbtn .el-dialog__close {
+  color: var(--paper);
+}
+
+.el-overlay {
+  backdrop-filter: blur(10px);
+}
+
+/* Tooltip */
+.el-popper.is-dark {
+  background: #0d1114;
+  border: 1px solid var(--line-2);
+  color: var(--paper);
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 8px 12px;
+}
+
+.el-popper.is-dark .el-popper__arrow::before {
+  background: #0d1114;
+  border-color: var(--line-2);
+}
+
+/* Message */
+.el-message {
+  --el-message-bg-color: #171d21;
+  --el-message-border-color: var(--line-2);
+  --el-message-text-color: var(--paper);
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 12px 18px;
+}
+
+.el-message .el-message__icon {
+  color: var(--accent);
+}
+
+/* Backtop */
+.el-backtop {
+  --el-backtop-bg-color: #171d21;
+  --el-backtop-text-color: var(--paper);
+  --el-backtop-hover-bg-color: var(--accent);
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  box-shadow: none;
+  z-index: 50;
+}
+
+.el-backtop:hover {
+  color: #14100c;
+  border-color: var(--accent);
+}
+
+/* Image */
+.el-image {
+  display: block;
+}
+
+.el-image__error,
+.el-image__placeholder {
+  background: var(--card);
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}

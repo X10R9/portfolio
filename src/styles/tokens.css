@@ -1,0 +1,38 @@
+:root {
+  /* Surfaces — charcoal with a cold cast, deliberately a few steps above pure black */
+  --bg: #151a1e;
+  --bg-deep: #101417;
+  --bg-soft: #171d21;
+  --card: #1a2126;
+  --card-hover: #1f272d;
+
+  /* Ink */
+  --paper: #ece9e1;
+  --paper-2: #c7c3b9;
+  --muted: #8e9498;
+  --dim: #7f868a;
+
+  /* Lines */
+  --line: rgba(236, 233, 225, 0.09);
+  --line-2: rgba(236, 233, 225, 0.16);
+  --line-3: rgba(236, 233, 225, 0.28);
+
+  /* Accent — instrument copper */
+  --accent: #d7a36b;
+  --accent-soft: rgba(215, 163, 107, 0.14);
+  --accent-line: rgba(215, 163, 107, 0.38);
+
+  /* Type */
+  --serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
+  --sans: 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui,
+    sans-serif;
+  --mono: 'Bahnschrift', 'Cascadia Mono', 'Consolas', 'SFMono-Regular', monospace;
+
+  /* Layout */
+  --container: 1700px;
+  --gutter: clamp(24px, 3.6vw, 64px);
+  --nav-h: 88px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
