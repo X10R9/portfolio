@@ -132,7 +132,7 @@ ol {
 /* Type helpers */
 .mono {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -185,14 +185,14 @@ ol {
 
 .sec-head__index {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--accent);
 }
 
 .sec-head__en {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--paper);
   text-transform: uppercase;
@@ -200,7 +200,7 @@ ol {
 
 .sec-head__note {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--muted);
   text-transform: uppercase;

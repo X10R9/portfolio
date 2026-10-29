@@ -112,12 +112,12 @@ const profile = site.profile
 }
 
 .about__now .mono {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--muted);
 }
 
 .about__now p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--paper-2);
   letter-spacing: 0.02em;
 }
@@ -166,16 +166,16 @@ a.contact-row:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 80px;
+  width: 88px;
   flex-shrink: 0;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--muted);
 }
 
 .contact-row__k .el-icon {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--accent);
 }
 
@@ -188,7 +188,7 @@ a.contact-row:hover {
 
 .contact-row__v {
   flex: 1;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.05em;
   color: var(--paper);
 }
@@ -237,14 +237,14 @@ a.contact-row:hover .contact-row__arrow {
 .stat__label {
   margin-top: 10px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
 
 .stat__note {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.05em;
   color: var(--muted);
 }
@@ -288,7 +288,7 @@ a.contact-row:hover .contact-row__arrow {
 
 .trace__year {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--accent);
 }
@@ -301,7 +301,7 @@ a.contact-row:hover .contact-row__arrow {
 }
 
 .trace__note {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   letter-spacing: 0.02em;
 }

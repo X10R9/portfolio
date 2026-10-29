@@ -356,7 +356,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   background: var(--paper);
   color: var(--bg);
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.06em;
 }
 
@@ -377,9 +377,9 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 .admin-brand__text em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 8px;
-  letter-spacing: 0.18em;
-  color: var(--dim);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
 }
 
 .admin-bar__right {
@@ -393,7 +393,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   align-items: center;
   gap: 7px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12.5px;
   letter-spacing: 0.12em;
   color: var(--dim);
 }
@@ -414,7 +414,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   align-items: center;
   gap: 7px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--accent);
 }
@@ -434,7 +434,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   background: var(--paper);
   color: var(--bg);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
 }
 
@@ -457,7 +457,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   align-items: center;
   gap: 7px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12.5px;
   letter-spacing: 0.1em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
@@ -492,7 +492,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 }
 
 .admin-nav__label {
-  font-size: 9px;
+  font-size: 12.5px;
   color: var(--dim);
   margin-bottom: 18px;
 }
@@ -513,7 +513,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 
 .admin-nav__item span {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12.5px;
   letter-spacing: 0.1em;
   color: var(--dim);
 }
@@ -540,13 +540,13 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 }
 
 .admin-nav__foot .mono {
-  font-size: 8px;
-  color: var(--dim);
+  font-size: 11.5px;
+  color: var(--muted);
 }
 
 .admin-nav__foot strong {
   font-weight: 400;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--paper-2);
 }
 
@@ -556,7 +556,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   gap: 7px;
   margin-top: 14px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
   text-align: left;
@@ -584,7 +584,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 }
 
 .admin-editor__head .mono {
-  font-size: 10px;
+  font-size: 12.5px;
   color: var(--dim);
 }
 
@@ -601,7 +601,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 .admin-editor__head p {
   max-width: 620px;
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.9;
   color: var(--muted);
 }
@@ -662,7 +662,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 }
 
 .login-aside__bottom .mono {
-  font-size: 9px;
+  font-size: 12.5px;
   color: rgba(242, 240, 234, 0.55);
 }
 
@@ -678,7 +678,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   display: block;
   margin-top: 26px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12.5px;
   letter-spacing: 0.14em;
   color: rgba(242, 240, 234, 0.5);
 }
@@ -692,7 +692,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 }
 
 .login-panel > .mono {
-  font-size: 10px;
+  font-size: 12.5px;
   color: var(--accent);
 }
 
@@ -708,8 +708,8 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 .login-panel__desc {
   max-width: 420px;
   margin-top: 18px;
-  font-size: 14px;
-  line-height: 1.95;
+  font-size: 15px;
+  line-height: 1.9;
   color: var(--muted);
 }
 
@@ -721,14 +721,14 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   padding: 10px 12px;
   border: 1px solid var(--accent-line);
   background: var(--accent-soft);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--accent);
 }
 
 .login-warning code,
 .login-panel__foot code {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12.5px;
 }
 
 .login-input {
@@ -754,7 +754,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   min-height: 20px;
   margin-top: 10px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12.5px;
   letter-spacing: 0.04em;
   color: #a33b2c;
 }
@@ -767,14 +767,14 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   margin-top: 34px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 12.5px;
   line-height: 1.8;
   color: var(--dim);
 }
 
 .login-panel__foot a {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }

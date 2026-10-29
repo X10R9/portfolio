@@ -174,7 +174,7 @@ onMounted(() => {
   align-items: center;
   gap: 10px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--paper-2);
 }
@@ -191,7 +191,7 @@ onMounted(() => {
 }
 
 .hero__coord {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.05em;
   color: var(--muted);
 }
@@ -262,7 +262,12 @@ onMounted(() => {
 .hero__actions {
   display: flex;
   align-items: center;
+  gap: 12px;
   flex-shrink: 0;
+}
+
+.hero__actions .btn.el-button + .btn.el-button {
+  margin-left: 0;
 }
 
 .hero__bottom {
@@ -281,7 +286,7 @@ onMounted(() => {
   gap: 14px;
   flex-wrap: wrap;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.05em;
   color: var(--muted);
   text-transform: uppercase;
@@ -296,7 +301,7 @@ onMounted(() => {
   align-items: center;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
   transition: color 0.3s var(--ease);

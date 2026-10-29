@@ -217,7 +217,7 @@ onBeforeUnmount(() => {
 .nav__name em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--muted);
 }
@@ -246,7 +246,7 @@ onBeforeUnmount(() => {
 
 .nav__idx {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.04em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
@@ -286,7 +286,7 @@ onBeforeUnmount(() => {
 
 .nav__clock {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.05em;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
@@ -297,7 +297,7 @@ onBeforeUnmount(() => {
   font-style: normal;
   color: var(--muted);
   margin-left: 3px;
-  font-size: 11px;
+  font-size: 12.5px;
 }
 
 .nav__cta {
@@ -308,7 +308,7 @@ onBeforeUnmount(() => {
   padding: 0 18px;
   border: 1px solid var(--line-2);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--paper);
   transition:
@@ -382,7 +382,7 @@ onBeforeUnmount(() => {
 
 .nav__panel-link span {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--accent);
   letter-spacing: 0.06em;
 }
@@ -392,7 +392,7 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   padding-top: 20px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }

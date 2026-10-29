@@ -94,7 +94,7 @@ const emit = defineEmits(['open'])
 
 .more__idx {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--muted);
 }
@@ -113,18 +113,18 @@ const emit = defineEmits(['open'])
 
 .more__meta,
 .more__detail {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--muted);
 }
 
 .more__detail {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .more__year {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--muted);
   text-align: right;

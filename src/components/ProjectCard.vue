@@ -161,7 +161,7 @@ function open() {
 .project__placeholder em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -175,8 +175,8 @@ function open() {
   left: 20px;
   bottom: 18px;
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
   color: var(--paper);
   display: grid;
   place-items: center;
@@ -199,7 +199,7 @@ function open() {
   border: 1px solid rgba(28, 31, 31, 0.16);
   backdrop-filter: blur(10px);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--paper);
   opacity: 0;
@@ -244,7 +244,7 @@ function open() {
   align-items: center;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -314,7 +314,7 @@ function open() {
 
 .project__role {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
   text-transform: uppercase;
@@ -327,7 +327,7 @@ function open() {
   gap: 9px;
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--paper);
@@ -354,7 +354,7 @@ function open() {
 }
 
 .project__cta .el-icon {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media (max-width: 1000px) {

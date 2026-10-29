@@ -80,7 +80,7 @@ const profile = site.profile
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.62em;
   color: var(--muted);
   white-space: nowrap;
@@ -91,7 +91,7 @@ const profile = site.profile
   left: 24px;
   top: 24px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -101,7 +101,7 @@ const profile = site.profile
   left: 24px;
   bottom: 22px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   line-height: 1.7;
   letter-spacing: 0.06em;
   color: var(--muted);
@@ -136,7 +136,7 @@ const profile = site.profile
   border-top: 1px solid var(--line);
   margin-top: 14px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);

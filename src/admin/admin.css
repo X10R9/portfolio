@@ -6,12 +6,12 @@
 
 .admin-form .el-form-item__label {
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-size: 13px;
+  letter-spacing: 0.02em;
   line-height: 1.4;
-  color: var(--dim);
+  color: var(--muted);
   text-transform: uppercase;
-  padding-bottom: 7px;
+  padding-bottom: 8px;
 }
 
 .admin-form .el-input__wrapper {
@@ -34,7 +34,7 @@
 .admin-form .el-textarea__inner {
   color: var(--paper);
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -68,11 +68,11 @@
 
 .admin-form .el-select__placeholder {
   color: var(--dim);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .admin-form .el-select__selected-item {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .admin-form .el-tag {
@@ -80,14 +80,14 @@
   --el-tag-border-color: var(--line-2);
   --el-tag-text-color: var(--paper-2);
   border-radius: 1px;
-  font-size: 11px;
+  font-size: 12.5px;
 }
 
 .admin-form .el-input__count {
   background: transparent;
   font-family: var(--mono);
-  font-size: 9px;
-  color: var(--dim);
+  font-size: 12px;
+  color: var(--muted);
 }
 
 .panel {
@@ -113,8 +113,9 @@
 }
 
 .panel__head .mono {
-  font-size: 9px;
-  color: var(--dim);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .field-grid {
@@ -139,10 +140,10 @@
   margin-top: -8px;
   margin-bottom: 14px;
   font-family: var(--mono);
-  font-size: 9px;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.75;
   letter-spacing: 0.02em;
-  color: var(--dim);
+  color: var(--muted);
 }
 
 .row-list {
@@ -197,10 +198,10 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 16px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
   color: var(--accent);
 }
 
@@ -244,11 +245,11 @@
 }
 
 .project-tabs button {
-  padding: 8px 12px;
+  padding: 9px 14px;
   border: 1px solid var(--line);
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.04em;
+  font-size: 13.5px;
+  letter-spacing: 0.03em;
   color: var(--muted);
   transition:
     color 0.3s var(--ease),
@@ -296,10 +297,11 @@
 .tool-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
+  padding: 4px 0;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 14px;
+  letter-spacing: 0.06em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
 }
@@ -313,7 +315,7 @@
 }
 
 .tool-btn:disabled {
-  opacity: 0.3;
+  opacity: 0.42;
   cursor: not-allowed;
 }
 
@@ -368,7 +370,7 @@
   text-align: center;
   border: 1px dashed var(--line-2);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .empty-state button {
@@ -376,8 +378,8 @@
   margin-top: 14px;
   color: var(--accent);
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
 }
 
 @media (max-width: 860px) {

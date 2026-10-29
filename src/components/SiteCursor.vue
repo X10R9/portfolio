@@ -150,7 +150,7 @@ onBeforeUnmount(() => {
 
 .cursor__label {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   color: var(--accent);
   opacity: 0;

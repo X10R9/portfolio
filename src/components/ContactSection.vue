@@ -167,7 +167,7 @@ function onMove(event) {
   gap: 14px;
   flex: 1;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--paper);
 }
@@ -186,7 +186,7 @@ function onMove(event) {
   align-items: center;
   gap: 9px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--muted);
   white-space: nowrap;
@@ -304,8 +304,12 @@ function onMove(event) {
 .contact__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin-top: 24px;
+}
+
+.contact__actions .btn.el-button + .btn.el-button {
+  margin-left: 0;
 }
 
 .contact__meta {
@@ -325,14 +329,14 @@ function onMove(event) {
 }
 
 .contact__meta .mono {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
 
 .contact__meta strong {
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.05em;
   color: var(--paper-2);
 }
@@ -345,7 +349,7 @@ function onMove(event) {
   padding: 18px 0 26px;
   border-top: 1px solid var(--line);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.05em;
   color: var(--muted);
   text-transform: uppercase;

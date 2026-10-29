@@ -154,7 +154,7 @@ const gallerySrcs = computed(() =>
 }
 
 .dialog__bar .mono {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -164,7 +164,7 @@ const gallerySrcs = computed(() =>
   align-items: center;
   gap: 8px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
@@ -202,7 +202,7 @@ const gallerySrcs = computed(() =>
   display: flex;
   gap: 16px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -269,7 +269,7 @@ const gallerySrcs = computed(() =>
 .dialog__cover-empty em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -282,7 +282,7 @@ const gallerySrcs = computed(() =>
   padding: 6px 10px;
   background: rgba(242, 240, 234, 0.92);
   border: 1px solid var(--line);
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--paper-2);
   text-transform: none;
   letter-spacing: 0.04em;
@@ -304,14 +304,14 @@ const gallerySrcs = computed(() =>
 }
 
 .meta-item .mono {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
 
 .meta-item strong {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--paper);
   line-height: 1.6;
 }
@@ -336,7 +336,7 @@ const gallerySrcs = computed(() =>
   gap: 12px;
   margin-bottom: 12px;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -362,7 +362,7 @@ const gallerySrcs = computed(() =>
 }
 
 .notes__label {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -376,7 +376,7 @@ const gallerySrcs = computed(() =>
   gap: 16px;
   padding: 11px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--paper-2);
 }
@@ -385,7 +385,7 @@ const gallerySrcs = computed(() =>
   flex-shrink: 0;
   padding-top: 3px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--accent);
 }
@@ -425,7 +425,7 @@ const gallerySrcs = computed(() =>
 
 .fact span {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   color: var(--muted);
 }
@@ -437,7 +437,7 @@ const gallerySrcs = computed(() =>
 }
 
 .gallery__label {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
   margin-bottom: 0;
@@ -451,7 +451,7 @@ const gallerySrcs = computed(() =>
 }
 
 .dialog__note {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.8;
   color: var(--muted);
   padding-top: 18px;
@@ -467,7 +467,7 @@ const gallerySrcs = computed(() =>
 }
 
 .dialog__foot .mono {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -476,7 +476,7 @@ const gallerySrcs = computed(() =>
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   color: var(--muted);
 }

@@ -83,8 +83,9 @@ const props = defineProps({
 }
 
 .preview__head .mono {
-  font-size: 9px;
-  color: var(--dim);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .preview__live {
@@ -92,7 +93,7 @@ const props = defineProps({
   align-items: center;
   gap: 6px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12.5px;
   color: var(--accent);
 }
 
@@ -175,7 +176,7 @@ const props = defineProps({
 
 .preview__name {
   font-family: var(--serif);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
 }
 
@@ -288,8 +289,9 @@ const props = defineProps({
   display: block;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--line-2);
-  font-size: 8px;
-  color: var(--dim);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .preview__project {
@@ -310,7 +312,7 @@ const props = defineProps({
 .preview__project strong {
   overflow: hidden;
   font-family: var(--serif);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--paper);
   text-overflow: ellipsis;
@@ -335,26 +337,27 @@ const props = defineProps({
 }
 
 .preview__contact .mono {
-  font-size: 8px;
-  color: var(--dim);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .preview__contact strong {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--paper);
 }
 
 .preview__contact > span:last-child {
-  font-size: 8px;
+  font-size: 12px;
   color: var(--muted);
 }
 
 .preview__note {
   margin-top: 22px;
-  font-size: 9px;
+  font-size: 12.5px;
   line-height: 1.8;
-  color: var(--dim);
+  color: var(--muted);
 }
 </style>
