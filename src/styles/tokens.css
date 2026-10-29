@@ -14,8 +14,8 @@
 
   /* Lines */
   --line: rgba(28, 31, 31, 0.1);
-  --line-2: rgba(28, 31, 31, 0.18);
-  --line-3: rgba(28, 31, 31, 0.3);
+  --line-2: rgba(28, 31, 31, 0.14);
+  --line-3: rgba(28, 31, 31, 0.26);
 
   /* Accent — burnt copper, readable on paper */
   --accent: #a85b2e;

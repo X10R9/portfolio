@@ -63,7 +63,7 @@ const emit = defineEmits(['open'])
 }
 
 .more {
-  margin-top: clamp(56px, 7vw, 104px);
+  margin-top: clamp(64px, 7vw, 96px);
 }
 
 .more__head {
@@ -94,9 +94,9 @@ const emit = defineEmits(['open'])
 
 .more__idx {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 .more__title {
@@ -118,15 +118,15 @@ const emit = defineEmits(['open'])
 }
 
 .more__detail {
-  color: var(--dim);
+  color: var(--muted);
   font-size: 12px;
 }
 
 .more__year {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
   text-align: right;
 }
 

@@ -11,6 +11,7 @@ html {
   scroll-padding-top: calc(var(--nav-h) + 20px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -20,9 +21,10 @@ body {
   color: var(--paper);
   font-family: var(--sans);
   font-size: 17px;
-  line-height: 1.85;
+  line-height: 1.75;
   font-weight: 400;
   overflow-x: hidden;
+  text-autospace: normal;
 }
 
 body::before {
@@ -84,17 +86,19 @@ ol {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-deep);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9c4ba;
-  border: 3px solid var(--bg-deep);
+  background: rgba(108, 113, 111, 0.32);
+  border: 2px solid var(--bg);
+  border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: rgba(168, 91, 46, 0.55);
 }
 
 /* Layout primitives */
@@ -128,8 +132,8 @@ ol {
 /* Type helpers */
 .mono {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
   line-height: 1.4;
@@ -181,15 +185,15 @@ ol {
 
 .sec-head__index {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--accent);
 }
 
 .sec-head__en {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--paper);
   text-transform: uppercase;
 }
@@ -197,8 +201,8 @@ ol {
 .sec-head__note {
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--dim);
+  letter-spacing: 0.08em;
+  color: var(--muted);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -216,28 +220,28 @@ ol {
   font-weight: 500;
   font-size: clamp(42px, 4.6vw, 72px);
   line-height: 1.12;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.01em;
   color: var(--paper);
 }
 
 .sec-head__desc {
-  max-width: 460px;
-  font-size: 15px;
-  line-height: 1.9;
+  max-width: 440px;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--muted);
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 /* Buttons */
 .btn.el-button {
   --el-button-hover-bg-color: transparent;
-  height: 56px;
+  height: 48px;
   margin: 0;
-  padding: 0 28px;
+  padding: 0 26px;
   border-radius: 2px;
   font-family: var(--mono);
   font-size: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition:
     background 0.35s var(--ease),
@@ -333,8 +337,8 @@ ol {
     max-width: 100%;
   }
   .btn.el-button {
-    height: 50px;
-    padding: 0 22px;
+    height: 48px;
+    padding: 0 20px;
     font-size: 12px;
   }
 }

@@ -1,4 +1,4 @@
-﻿<script setup>
+<script setup>
 import { onMounted, ref } from 'vue'
 import { ArrowDown, CopyDocument } from '@element-plus/icons-vue'
 import { siteState as site } from '../stores/site'
@@ -172,10 +172,10 @@ onMounted(() => {
 .hero__eyebrow {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--paper-2);
 }
 
@@ -192,7 +192,8 @@ onMounted(() => {
 
 .hero__coord {
   font-size: 11px;
-  color: var(--dim);
+  letter-spacing: 0.05em;
+  color: var(--muted);
 }
 
 .hero__center {
@@ -203,8 +204,8 @@ onMounted(() => {
   font-family: var(--serif);
   font-weight: 500;
   font-size: clamp(68px, 9.6vw, 160px);
-  line-height: 1.03;
-  letter-spacing: -0.02em;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
   color: var(--paper);
 }
 
@@ -228,7 +229,7 @@ onMounted(() => {
 }
 
 .hero__line--indent {
-  padding-left: 0.92em;
+  padding-left: 0;
 }
 
 .hero__mark {
@@ -245,15 +246,16 @@ onMounted(() => {
   align-items: flex-end;
   justify-content: space-between;
   gap: clamp(32px, 5vw, 88px);
-  margin-top: clamp(30px, 4.6vh, 54px);
-  padding-left: 0.1em;
+  margin-top: 48px;
+  padding-left: 0;
   animation: fade 1.1s var(--ease) 0.6s both;
 }
 
 .hero__lede {
   max-width: 560px;
-  font-size: clamp(15px, 1.1vw, 18px);
-  line-height: 1.95;
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
   color: var(--paper-2);
 }
 
@@ -280,8 +282,8 @@ onMounted(() => {
   flex-wrap: wrap;
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.16em;
-  color: var(--dim);
+  letter-spacing: 0.05em;
+  color: var(--muted);
   text-transform: uppercase;
 }
 
@@ -294,8 +296,8 @@ onMounted(() => {
   align-items: center;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
 }
@@ -363,7 +365,7 @@ onMounted(() => {
     font-size: clamp(60px, 10.4vw, 112px);
   }
   .hero__line--indent {
-    padding-left: 0.4em;
+    padding-left: 0;
   }
 }
 

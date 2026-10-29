@@ -79,16 +79,20 @@ function open() {
 <style scoped>
 .project {
   display: grid;
-  grid-template-columns: minmax(0, 1.42fr) minmax(320px, 1fr);
-  gap: clamp(36px, 5.5vw, 96px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(48px, 5.2vw, 80px);
   align-items: center;
-  padding-block: clamp(44px, 5vw, 76px);
-  border-top: 1px solid var(--line);
+  padding-block: 60px;
+  border-bottom: 1px solid var(--line);
 }
 
 .project:first-of-type {
-  border-top: 0;
   padding-top: 0;
+}
+
+.project:last-of-type {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .project--reverse .project__media {
@@ -157,9 +161,9 @@ function open() {
 .project__placeholder em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .project__media:hover .project__shade {
@@ -195,8 +199,8 @@ function open() {
   border: 1px solid rgba(28, 31, 31, 0.16);
   backdrop-filter: blur(10px);
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--paper);
   opacity: 0;
   transform: translateY(8px);
@@ -218,7 +222,7 @@ function open() {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
@@ -238,10 +242,10 @@ function open() {
 .project__meta {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -250,65 +254,70 @@ function open() {
 }
 
 .project__type {
-  color: var(--dim);
+  color: var(--muted);
 }
 
 .project__type::before {
   content: '/';
-  margin-right: 14px;
+  margin-right: 12px;
   color: rgba(28, 31, 31, 0.24);
 }
 
 .project__title {
-  margin-top: 18px;
+  margin-top: 12px;
   font-family: var(--serif);
   font-weight: 500;
   font-size: clamp(36px, 3.5vw, 54px);
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   color: var(--paper);
 }
 
 .project__title span {
   display: block;
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: var(--sans);
   font-weight: 400;
-  font-size: 15px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
   color: var(--muted);
 }
 
 .project__summary {
-  margin-top: 22px;
-  max-width: 460px;
+  margin-top: 20px;
+  max-width: 480px;
   font-size: 15.5px;
-  line-height: 1.95;
+  line-height: 1.8;
   color: var(--paper-2);
 }
 
 .project__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 24px;
+  gap: 8px;
+  margin-top: 22px;
 }
 
 .project__foot {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 22px;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 30px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 0;
+  border-top: 0;
+  line-height: 1.4;
 }
 
 .project__role {
-  font-size: 10px;
-  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
 }
 
 .project__cta {
@@ -319,7 +328,7 @@ function open() {
   margin-left: auto;
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--paper);
   transition: color 0.35s var(--ease);
@@ -352,6 +361,13 @@ function open() {
   .project {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding-block: 44px;
+  }
+  .project:first-of-type {
+    padding-top: 0;
+  }
+  .project:last-of-type {
+    padding-bottom: 0;
   }
   .project--reverse .project__media,
   .project--reverse .project__body {
@@ -361,7 +377,7 @@ function open() {
     font-size: clamp(30px, 5.4vw, 42px);
   }
   .project__body {
-    padding-bottom: 8px;
+    padding-bottom: 0;
   }
 }
 </style>

@@ -154,8 +154,9 @@ const gallerySrcs = computed(() =>
 }
 
 .dialog__bar .mono {
-  font-size: 10px;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .dialog__close {
@@ -163,8 +164,8 @@ const gallerySrcs = computed(() =>
   align-items: center;
   gap: 8px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
 }
@@ -183,23 +184,28 @@ const gallerySrcs = computed(() =>
   width: 8px;
 }
 
+.dialog__scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .dialog__scroll::-webkit-scrollbar-thumb {
-  background: #cfc9be;
+  background: rgba(108, 113, 111, 0.32);
   border: 2px solid var(--bg-soft);
+  border-radius: 99px;
 }
 
 .dialog__head {
-  padding: clamp(36px, 4.5vw, 64px) clamp(28px, 5vw, 64px) 34px;
+  padding: clamp(36px, 4.5vw, 64px) 64px 34px;
 }
 
 .dialog__eyebrow {
   display: flex;
   gap: 16px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--dim);
+  color: var(--muted);
 }
 
 .dialog__eyebrow span:first-child {
@@ -211,15 +217,15 @@ const gallerySrcs = computed(() =>
   font-family: var(--serif);
   font-weight: 500;
   font-size: clamp(44px, 5vw, 72px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
   color: var(--paper);
 }
 
 .dialog__subtitle {
   margin-top: 10px;
-  font-size: 17px;
-  letter-spacing: 0.04em;
+  font-size: 16px;
+  letter-spacing: 0.02em;
   color: var(--muted);
 }
 
@@ -227,13 +233,13 @@ const gallerySrcs = computed(() =>
   max-width: 720px;
   margin-top: 24px;
   font-size: 16px;
-  line-height: 1.95;
+  line-height: 1.75;
   color: var(--paper-2);
 }
 
 .dialog__cover {
   position: relative;
-  margin: 0 clamp(28px, 5vw, 64px);
+  margin: 0 64px;
   border: 1px solid var(--line);
   background: var(--card);
   overflow: hidden;
@@ -263,9 +269,9 @@ const gallerySrcs = computed(() =>
 .dialog__cover-empty em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .dialog__cover-tag {
@@ -276,7 +282,7 @@ const gallerySrcs = computed(() =>
   padding: 6px 10px;
   background: rgba(242, 240, 234, 0.92);
   border: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 11px;
   color: var(--paper-2);
   text-transform: none;
   letter-spacing: 0.04em;
@@ -284,9 +290,9 @@ const gallerySrcs = computed(() =>
 
 .dialog__meta {
   display: grid;
-  grid-template-columns: 0.8fr 1.6fr 0.6fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin: 0 clamp(28px, 5vw, 64px);
+  margin: 0 64px;
   padding: 26px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -298,8 +304,9 @@ const gallerySrcs = computed(() =>
 }
 
 .meta-item .mono {
-  font-size: 9px;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .meta-item strong {
@@ -311,10 +318,10 @@ const gallerySrcs = computed(() =>
 
 .dialog__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(240px, 0.75fr);
+  grid-template-columns: minmax(0, 1.6fr) minmax(240px, 0.8fr);
   align-items: start;
-  gap: clamp(32px, 5vw, 72px);
-  padding: clamp(34px, 4vw, 56px) clamp(28px, 5vw, 64px) 48px;
+  gap: clamp(32px, 4vw, 56px);
+  padding: clamp(34px, 4vw, 56px) 64px 48px;
 }
 
 .dialog__text {
@@ -329,9 +336,9 @@ const gallerySrcs = computed(() =>
   gap: 12px;
   margin-bottom: 12px;
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   color: var(--accent);
   text-transform: uppercase;
 }
@@ -345,7 +352,7 @@ const gallerySrcs = computed(() =>
 
 .block p {
   font-size: 15px;
-  line-height: 2;
+  line-height: 1.7;
   color: var(--paper-2);
 }
 
@@ -355,8 +362,9 @@ const gallerySrcs = computed(() =>
 }
 
 .notes__label {
-  font-size: 9px;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .notes ul {
@@ -369,7 +377,7 @@ const gallerySrcs = computed(() =>
   padding: 11px 0;
   border-bottom: 1px solid var(--line);
   font-size: 14px;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--paper-2);
 }
 
@@ -377,8 +385,8 @@ const gallerySrcs = computed(() =>
   flex-shrink: 0;
   padding-top: 3px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   color: var(--accent);
 }
 
@@ -409,29 +417,30 @@ const gallerySrcs = computed(() =>
 
 .fact strong {
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.05;
   color: var(--paper);
 }
 
 .fact span {
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 .gallery {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 .gallery__label {
-  font-size: 9px;
-  color: var(--dim);
-  margin-bottom: 2px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0;
 }
 
 .gallery__item {
@@ -443,8 +452,8 @@ const gallerySrcs = computed(() =>
 
 .dialog__note {
   font-size: 12px;
-  line-height: 1.9;
-  color: var(--dim);
+  line-height: 1.8;
+  color: var(--muted);
   padding-top: 18px;
   border-top: 1px solid var(--line);
 }
@@ -453,13 +462,14 @@ const gallerySrcs = computed(() =>
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px clamp(28px, 5vw, 64px);
+  padding: 20px 64px;
   border-top: 1px solid var(--line);
 }
 
 .dialog__foot .mono {
-  font-size: 9px;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .dialog__foot-close {
@@ -481,8 +491,15 @@ const gallerySrcs = computed(() =>
 }
 
 @media (max-width: 900px) {
+  .dialog__head {
+    padding: 32px 28px 28px;
+  }
+  .dialog__cover {
+    margin: 0 28px;
+  }
   .dialog__meta {
     grid-template-columns: 1fr 1fr;
+    margin: 0 28px;
   }
   .meta-item--wide {
     grid-column: 1 / -1;
@@ -490,9 +507,13 @@ const gallerySrcs = computed(() =>
   }
   .dialog__body {
     grid-template-columns: 1fr;
+    padding: 32px 28px 40px;
   }
   .dialog__cover img {
     aspect-ratio: 16 / 10;
+  }
+  .dialog__foot {
+    padding: 18px 28px;
   }
   .facts {
     grid-template-columns: repeat(4, 1fr);
@@ -508,9 +529,10 @@ const gallerySrcs = computed(() =>
   .gallery {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 16px;
   }
   .gallery__item {
-    width: calc(50% - 5px);
+    width: calc(50% - 8px);
   }
 }
 </style>

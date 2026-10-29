@@ -112,8 +112,8 @@ const profile = site.profile
 }
 
 .about__now .mono {
-  font-size: 10px;
-  color: var(--dim);
+  font-size: 12px;
+  color: var(--muted);
 }
 
 .about__now p {
@@ -126,34 +126,34 @@ const profile = site.profile
   font-family: var(--serif);
   font-weight: 500;
   font-size: clamp(34px, 3.4vw, 52px);
-  line-height: 1.42;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
   color: var(--paper);
-  margin-bottom: 34px;
+  margin-bottom: 32px;
 }
 
 .about__text {
   display: grid;
-  gap: 20px;
-  max-width: 690px;
+  gap: 24px;
+  max-width: 680px;
 }
 
 .about__text p {
   font-size: 16px;
-  line-height: 2.05;
+  line-height: 1.7;
   color: var(--paper-2);
 }
 
 .about__contact {
-  margin-top: 54px;
+  margin-top: 48px;
   border-top: 1px solid var(--line);
 }
 
 .contact-row {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 17px 0;
+  gap: 20px;
+  padding: 16px 0;
   border-bottom: 1px solid var(--line);
   transition: border-color 0.35s var(--ease);
 }
@@ -166,16 +166,16 @@ a.contact-row:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 136px;
+  width: 80px;
   flex-shrink: 0;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 .contact-row__k .el-icon {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--accent);
 }
 
@@ -188,8 +188,8 @@ a.contact-row:hover {
 
 .contact-row__v {
   flex: 1;
-  font-size: 15px;
-  letter-spacing: 0.02em;
+  font-size: 13px;
+  letter-spacing: 0.05em;
   color: var(--paper);
 }
 
@@ -238,15 +238,15 @@ a.contact-row:hover .contact-row__arrow {
   margin-top: 10px;
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.16em;
-  color: var(--paper-2);
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .stat__note {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
 }
 
 .trace {
@@ -288,8 +288,8 @@ a.contact-row:hover .contact-row__arrow {
 
 .trace__year {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--accent);
 }
 
@@ -302,7 +302,7 @@ a.contact-row:hover .contact-row__arrow {
 
 .trace__note {
   font-size: 12px;
-  color: var(--dim);
+  color: var(--muted);
   letter-spacing: 0.02em;
 }
 

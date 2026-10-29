@@ -58,8 +58,8 @@
   --el-tag-bg-color: transparent;
   --el-tag-border-color: var(--line-2);
   --el-tag-text-color: var(--paper-2);
-  height: 30px;
-  padding: 0 11px;
+  height: 36px;
+  padding: 0 16px;
   border-radius: 1px;
   background: transparent;
   border-color: var(--line-2);
@@ -135,20 +135,27 @@
 
 /* Backtop */
 .el-backtop {
-  --el-backtop-bg-color: #fbfaf6;
+  --el-backtop-bg-color: rgba(248, 246, 241, 0.88);
   --el-backtop-text-color: var(--paper);
   --el-backtop-hover-bg-color: var(--accent);
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--line-2);
   border-radius: 2px;
-  box-shadow: 0 10px 30px rgba(28, 31, 31, 0.1);
+  box-shadow: none;
+  backdrop-filter: blur(10px);
   z-index: 50;
 }
 
 .el-backtop:hover {
   color: #fffaf3;
   border-color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .el-backtop {
+    display: none;
+  }
 }
 
 /* Image */

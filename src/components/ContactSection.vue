@@ -40,7 +40,7 @@ function onMove(event) {
 
       <div class="contact__main">
         <h2 class="contact__title" data-reveal>
-          有想法，<br />
+          有想法<span class="contact__comma">，</span><br />
           就聊聊<i class="contact__mark" aria-hidden="true" />
         </h2>
 
@@ -124,8 +124,8 @@ function onMove(event) {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(28, 31, 31, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 31, 31, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(28, 31, 31, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 31, 31, 0.03) 1px, transparent 1px);
   background-size: 120px 120px;
   mask-image: radial-gradient(80% 80% at 50% 50%, #000 30%, transparent 100%);
 }
@@ -164,11 +164,11 @@ function onMove(event) {
 .contact__label {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex: 1;
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--paper);
 }
 
@@ -186,8 +186,8 @@ function onMove(event) {
   align-items: center;
   gap: 9px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   color: var(--muted);
   white-space: nowrap;
 }
@@ -211,12 +211,19 @@ function onMove(event) {
 }
 
 .contact__title {
+  position: relative;
   font-family: var(--serif);
   font-weight: 500;
   font-size: clamp(76px, 9.8vw, 164px);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
   color: var(--paper);
+  text-align: right;
+}
+
+.contact__comma {
+  color: var(--accent);
+  margin-right: -0.82em;
 }
 
 .contact__title span {
@@ -224,12 +231,15 @@ function onMove(event) {
 }
 
 .contact__mark {
+  position: absolute;
+  right: -0.06em;
+  bottom: 0.16em;
   display: inline-block;
-  width: 0.085em;
-  height: 0.085em;
-  margin-left: 0.1em;
+  width: 0.075em;
+  height: 0.075em;
+  margin-left: 0;
   background: var(--accent);
-  vertical-align: 0.02em;
+  vertical-align: 0;
 }
 
 .contact__side {
@@ -240,24 +250,25 @@ function onMove(event) {
 }
 
 .contact__note {
-  max-width: 480px;
+  max-width: 460px;
   font-size: 15.5px;
-  line-height: 2;
+  line-height: 1.8;
   color: var(--muted);
 }
 
 .contact__email {
   position: relative;
   display: block;
-  margin-top: 34px;
+  margin-top: 24px;
   padding-bottom: 12px;
   width: 100%;
 }
 
 .contact__email-v {
-  font-family: var(--mono);
-  font-size: clamp(20px, 1.8vw, 30px);
-  letter-spacing: 0.02em;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(22px, 1.9vw, 28px);
+  letter-spacing: 0.01em;
   color: var(--paper);
   transition: color 0.35s var(--ease);
 }
@@ -294,13 +305,13 @@ function onMove(event) {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .contact__meta {
   display: grid;
-  grid-template-columns: 1.1fr 1.2fr 0.9fr;
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   width: 100%;
   margin-top: 40px;
   padding-top: 20px;
@@ -314,28 +325,29 @@ function onMove(event) {
 }
 
 .contact__meta .mono {
-  font-size: 9px;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .contact__meta strong {
   font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.04em;
+  font-size: 13px;
+  letter-spacing: 0.05em;
   color: var(--paper-2);
 }
 
 .contact__footer {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 24px;
   padding: 18px 0 26px;
   border-top: 1px solid var(--line);
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
   text-transform: uppercase;
 }
 
@@ -370,6 +382,15 @@ function onMove(event) {
   }
   .contact__title {
     font-size: clamp(64px, 12vw, 110px);
+    text-align: left;
+  }
+  .contact__comma {
+    margin-right: 0;
+  }
+  .contact__mark {
+    position: static;
+    margin-left: 0.1em;
+    vertical-align: 0.02em;
   }
   .contact__meta {
     max-width: 520px;
@@ -391,6 +412,9 @@ function onMove(event) {
   }
   .contact__meta {
     grid-template-columns: 1fr 1fr;
+  }
+  .contact__meta div:last-child {
+    grid-column: 1 / -1;
   }
 }
 </style>

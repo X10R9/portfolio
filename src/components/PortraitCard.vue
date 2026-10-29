@@ -75,42 +75,42 @@ const profile = site.profile
 
 .portrait__en {
   position: absolute;
-  right: 22px;
+  right: 24px;
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.5em;
+  font-size: 11px;
+  letter-spacing: 0.62em;
   color: var(--muted);
   white-space: nowrap;
 }
 
 .portrait__tag {
   position: absolute;
-  left: 28px;
-  top: 26px;
+  left: 24px;
+  top: 24px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .portrait__coord {
   position: absolute;
-  left: 28px;
-  bottom: 24px;
+  left: 24px;
+  bottom: 22px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.7;
-  letter-spacing: 0.16em;
-  color: var(--dim);
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 .portrait__corner {
   position: absolute;
-  width: 13px;
-  height: 13px;
+  width: 24px;
+  height: 24px;
   border-color: var(--accent);
   border-style: solid;
   opacity: 0.75;
@@ -136,10 +136,10 @@ const profile = site.profile
   border-top: 1px solid var(--line);
   margin-top: 14px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--dim);
+  color: var(--muted);
 }
 </style>
 

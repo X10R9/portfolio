@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
           :class="{ 'is-active': active === link.id }"
         >
           <span class="nav__idx">0{{ i + 1 }}</span>
-          {{ link.label }}
+          <span class="nav__label">{{ link.label }}</span>
         </a>
       </nav>
 
@@ -217,9 +217,9 @@ onBeforeUnmount(() => {
 .nav__name em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 .nav__links {
@@ -232,9 +232,9 @@ onBeforeUnmount(() => {
   position: relative;
   display: flex;
   align-items: baseline;
-  gap: 7px;
+  gap: 4px;
   font-size: 14px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
 }
@@ -246,17 +246,21 @@ onBeforeUnmount(() => {
 
 .nav__idx {
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
   transition: color 0.3s var(--ease);
+}
+
+.nav__label {
+  position: relative;
 }
 
 .nav__link.is-active .nav__idx {
   color: var(--accent);
 }
 
-.nav__link::after {
+.nav__label::after {
   content: '';
   position: absolute;
   left: 0;
@@ -269,7 +273,7 @@ onBeforeUnmount(() => {
   transition: transform 0.5s var(--ease);
 }
 
-.nav__link.is-active::after {
+.nav__link.is-active .nav__label::after {
   transform: scaleX(1);
 }
 
@@ -283,16 +287,17 @@ onBeforeUnmount(() => {
 .nav__clock {
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--dim);
+  letter-spacing: 0.05em;
+  color: var(--muted);
   font-variant-numeric: tabular-nums;
+  line-height: 1;
 }
 
 .nav__clock em {
   font-style: normal;
   color: var(--muted);
-  margin-left: 4px;
-  font-size: 9px;
+  margin-left: 3px;
+  font-size: 11px;
 }
 
 .nav__cta {
@@ -304,7 +309,7 @@ onBeforeUnmount(() => {
   border: 1px solid var(--line-2);
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--paper);
   transition:
     border-color 0.35s var(--ease),
@@ -377,9 +382,9 @@ onBeforeUnmount(() => {
 
 .nav__panel-link span {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   color: var(--accent);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
 }
 
 .nav__panel-meta {
@@ -387,9 +392,9 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   padding-top: 20px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .nav__progress {
