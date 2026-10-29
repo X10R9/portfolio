@@ -1,0 +1,4 @@
+# Copy to .dev.vars when testing Pages Functions with:
+#   npx wrangler pages dev dist --kv SITE_DATA
+ADMIN_PASSWORD=change-me
+ADMIN_SECRET=change-me-to-a-long-random-string

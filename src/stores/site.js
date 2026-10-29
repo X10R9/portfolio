@@ -85,14 +85,14 @@ export async function saveSite(payload, token) {
 
   const data = await response.json()
   applySite(data)
-  notifySiteUpdated()
+  notifySiteUpdated(data)
   return data
 }
 
-export function notifySiteUpdated() {
+export function notifySiteUpdated(data) {
   try {
     const channel = new BroadcastChannel(channelName)
-    channel.postMessage({ type: 'site-updated', at: Date.now() })
+    channel.postMessage({ type: 'site-updated', at: Date.now(), data })
     channel.close()
   } catch {
     /* BroadcastChannel is optional */

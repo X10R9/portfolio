@@ -26,6 +26,7 @@ import './admin.css'
 
 const clone = (value) => JSON.parse(JSON.stringify(value))
 const tokenKey = 'xr_admin_token'
+const isStaticHost = !['localhost', '127.0.0.1', '::1'].includes(window.location.hostname)
 
 const draft = reactive(clone(defaults))
 const baseline = ref('')
@@ -294,7 +295,13 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 
         <div v-if="!loading && !apiOnline" class="login-warning">
           <el-icon><Connection /></el-icon>
-          管理 API 未连接。请先运行 <code>npm run api</code>。
+          <span v-if="isStaticHost">
+            当前是静态部署，管理 API 不可用。请在本地同时运行 <code>npm run api</code> 和
+            <code>npm run dev</code>，修改后重新构建并部署。
+          </span>
+          <span v-else>
+            管理 API 未连接。请另开一个终端运行 <code>npm run api</code>，然后刷新本页。
+          </span>
         </div>
 
         <el-input
@@ -306,7 +313,12 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
           placeholder="管理密码"
           @keyup.enter="login"
         />
-        <el-button class="btn btn--solid login-submit" :loading="loggingIn" @click="login">
+        <el-button
+          class="btn btn--solid login-submit"
+          :loading="loggingIn"
+          :disabled="!apiOnline"
+          @click="login"
+        >
           登录
         </el-button>
         <p class="login-error" role="alert">{{ loginError }}</p>
@@ -748,6 +760,12 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
   max-width: 100%;
   margin-top: 12px;
   height: 50px;
+}
+
+.login-submit.el-button.is-disabled {
+  background: #d9d5cc;
+  border-color: #d9d5cc;
+  color: #8c8b84;
 }
 
 .login-error {

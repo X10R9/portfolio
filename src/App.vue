@@ -8,7 +8,12 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import ProjectDialog from './components/ProjectDialog.vue'
 import SiteCursor from './components/SiteCursor.vue'
-import { loadSite, siteState, subscribeSiteUpdates } from './stores/site'
+import {
+  applySite,
+  loadSite,
+  siteState,
+  subscribeSiteUpdates
+} from './stores/site'
 
 const activeProject = ref(null)
 let observer
@@ -39,8 +44,12 @@ onMounted(async () => {
   await nextTick()
   collectReveals()
 
-  unsubscribe = subscribeSiteUpdates(async () => {
-    await loadSite({ force: true })
+  unsubscribe = subscribeSiteUpdates(async (event) => {
+    if (event?.data) {
+      applySite(event.data)
+    } else {
+      await loadSite({ force: true })
+    }
     await nextTick()
     collectReveals()
   })

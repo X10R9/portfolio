@@ -7,6 +7,8 @@
     "dev": "vite",
     "api": "node server/index.mjs --api-only",
     "serve": "node server/index.mjs",
+    "sync": "node scripts/sync-data.mjs",
+    "prebuild": "node scripts/sync-data.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
