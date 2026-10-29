@@ -10,18 +10,26 @@ import 'element-plus/es/components/image-viewer/style/css'
 import 'element-plus/es/components/backtop/style/css'
 import 'element-plus/es/components/icon/style/css'
 import 'element-plus/es/components/message/style/css'
-import 'element-plus/theme-chalk/dark/css-vars.css'
 
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/element.css'
 
-import App from './App.vue'
+const isAdmin =
+  new URLSearchParams(window.location.search).has('admin') ||
+  /^\/admin\/?$/.test(window.location.pathname)
 
-const app = createApp(App)
-
-for (const component of [ElButton, ElTag, ElDialog, ElImage, ElIcon, ElBacktop]) {
-  app.use(component)
+if (isAdmin) {
+  document.documentElement.classList.add('admin-mode')
+  document.title = '内容管理 · 徐茹'
 }
 
-app.mount('#app')
+const rootModule = isAdmin ? import('./admin/AdminApp.vue') : import('./App.vue')
+
+rootModule.then(({ default: Root }) => {
+  const app = createApp(Root)
+  for (const component of [ElButton, ElTag, ElDialog, ElImage, ElIcon, ElBacktop]) {
+    app.use(component)
+  }
+  app.mount('#app')
+})

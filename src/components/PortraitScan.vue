@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 const lines = Array.from({ length: 92 }, (_, i) => {
   const y = 62 + i * 6
   const amp = 1.5 + (i % 7)
@@ -19,13 +19,13 @@ const lines = Array.from({ length: 92 }, (_, i) => {
   >
     <defs>
       <linearGradient id="bustFill" x1="0" y1="0" x2="0.6" y2="1">
-        <stop offset="0" stop-color="#1d252a" />
-        <stop offset="0.55" stop-color="#141a1e" />
-        <stop offset="1" stop-color="#0f1417" />
+        <stop offset="0" stop-color="#fbfaf6" />
+        <stop offset="0.55" stop-color="#f1eee6" />
+        <stop offset="1" stop-color="#e6e2d9" />
       </linearGradient>
       <radialGradient id="scanGlow" cx="0.62" cy="0.34" r="0.55">
-        <stop offset="0" stop-color="#d7a36b" stop-opacity="0.2" />
-        <stop offset="1" stop-color="#d7a36b" stop-opacity="0" />
+        <stop offset="0" stop-color="#a85b2e" stop-opacity="0.22" />
+        <stop offset="1" stop-color="#a85b2e" stop-opacity="0" />
       </radialGradient>
       <clipPath id="bustClip">
         <path
@@ -60,13 +60,13 @@ const lines = Array.from({ length: 92 }, (_, i) => {
         v-for="(line, i) in lines"
         :key="i"
         :d="line.d"
-        :stroke="line.strong ? 'rgba(215, 163, 107, 0.3)' : 'rgba(236, 233, 225, 0.13)'"
+        :stroke="line.strong ? 'rgba(168, 91, 46, 0.34)' : 'rgba(28, 31, 31, 0.17)'"
         :stroke-width="line.strong ? 0.9 : 0.6"
         fill="none"
       />
       <path
         d="M300 180 L300 470"
-        stroke="rgba(215, 163, 107, 0.15)"
+        stroke="rgba(168, 91, 46, 0.2)"
         stroke-width="0.7"
         stroke-dasharray="2 7"
       />
@@ -85,7 +85,7 @@ const lines = Array.from({ length: 92 }, (_, i) => {
          C326 492 348 502 368 514
          C408 538 436 572 446 600"
       fill="none"
-      stroke="rgba(236, 233, 225, 0.34)"
+      stroke="rgba(28, 31, 31, 0.4)"
       stroke-width="1.1"
     />
 
@@ -101,7 +101,7 @@ const lines = Array.from({ length: 92 }, (_, i) => {
          C326 492 348 502 368 514
          C408 538 436 572 446 600"
       fill="none"
-      stroke="rgba(215, 163, 107, 0.55)"
+      stroke="rgba(168, 91, 46, 0.6)"
       stroke-width="1"
     />
   </svg>
@@ -115,3 +115,5 @@ const lines = Array.from({ length: 92 }, (_, i) => {
   height: 100%;
 }
 </style>
+
+

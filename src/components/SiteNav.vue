@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { siteState as site } from '../stores/site'
 
 const links = [
   { id: 'home', href: '#home', label: '首页' },
@@ -74,9 +75,9 @@ onBeforeUnmount(() => {
   <header class="nav" :class="{ 'is-scrolled': scrolled, 'is-open': menuOpen }">
     <div class="nav__inner container">
       <a class="nav__brand" href="#home" @click="closeMenu">
-        <span class="nav__mark" aria-hidden="true">XR<i /></span>
+        <span class="nav__mark" aria-hidden="true">{{ site.profile.monogram || 'XR' }}<i /></span>
         <span class="nav__name">
-          <strong>徐茹</strong>
+          <strong>{{ site.profile.name }}</strong>
           <em>PORTFOLIO / 2026</em>
         </span>
       </a>
@@ -96,7 +97,7 @@ onBeforeUnmount(() => {
 
       <div class="nav__right">
         <span class="nav__clock">{{ time }} <em>CST</em></span>
-        <a class="nav__cta" href="#contact">
+        <a class="nav__cta" href="#contact" data-cursor="CONTACT">
           <i aria-hidden="true" />
           联系我
         </a>
@@ -147,7 +148,7 @@ onBeforeUnmount(() => {
 }
 
 .nav.is-scrolled {
-  background: rgba(19, 24, 28, 0.93);
+  background: rgba(242, 240, 234, 0.86);
   border-bottom-color: var(--line);
   backdrop-filter: blur(18px) saturate(120%);
 }
@@ -171,11 +172,11 @@ onBeforeUnmount(() => {
   position: relative;
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--line-2);
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   color: var(--paper);
   transition:
@@ -188,8 +189,8 @@ onBeforeUnmount(() => {
   position: absolute;
   right: -3px;
   bottom: -3px;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   background: var(--accent);
 }
 
@@ -208,7 +209,7 @@ onBeforeUnmount(() => {
 
 .nav__name strong {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.12em;
 }
@@ -216,7 +217,7 @@ onBeforeUnmount(() => {
 .nav__name em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.2em;
   color: var(--dim);
 }
@@ -232,7 +233,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: baseline;
   gap: 7px;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
@@ -245,7 +246,7 @@ onBeforeUnmount(() => {
 
 .nav__idx {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.08em;
   color: var(--dim);
   transition: color 0.3s var(--ease);
@@ -281,7 +282,7 @@ onBeforeUnmount(() => {
 
 .nav__clock {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--dim);
   font-variant-numeric: tabular-nums;
@@ -291,19 +292,19 @@ onBeforeUnmount(() => {
   font-style: normal;
   color: var(--muted);
   margin-left: 4px;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .nav__cta {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  height: 38px;
+  height: 40px;
   padding: 0 18px;
   border: 1px solid var(--line-2);
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   color: var(--paper);
   transition:
     border-color 0.35s var(--ease),
@@ -328,17 +329,17 @@ onBeforeUnmount(() => {
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(215, 163, 107, 0.3);
+    box-shadow: 0 0 0 0 rgba(168, 91, 46, 0.3);
   }
   50% {
-    box-shadow: 0 0 0 5px rgba(215, 163, 107, 0);
+    box-shadow: 0 0 0 5px rgba(168, 91, 46, 0);
   }
 }
 
 .nav__burger {
   display: none;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--line-2);
   flex-direction: column;
   align-items: center;
@@ -348,7 +349,7 @@ onBeforeUnmount(() => {
 
 .nav__burger span {
   display: block;
-  width: 14px;
+  width: 16px;
   height: 1px;
   background: var(--paper);
   transition: transform 0.35s var(--ease);
@@ -358,7 +359,7 @@ onBeforeUnmount(() => {
   position: fixed;
   inset: var(--nav-h) 0 auto;
   padding: 20px var(--gutter) 32px;
-  background: rgba(14, 18, 21, 0.98);
+  background: rgba(248, 246, 241, 0.98);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(20px);
 }
@@ -370,13 +371,13 @@ onBeforeUnmount(() => {
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
   font-family: var(--serif);
-  font-size: 26px;
+  font-size: 28px;
   letter-spacing: 0.08em;
 }
 
 .nav__panel-link span {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   color: var(--accent);
   letter-spacing: 0.1em;
 }
@@ -386,7 +387,7 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   padding-top: 20px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.16em;
   color: var(--dim);
 }
@@ -399,7 +400,7 @@ onBeforeUnmount(() => {
   width: 100%;
   background: var(--accent);
   transform-origin: left;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .panel-enter-active,
@@ -435,8 +436,8 @@ onBeforeUnmount(() => {
     display: none;
   }
   .nav__mark {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
   }
 }
 </style>

@@ -1,8 +1,10 @@
 <script setup>
-import { profile } from '../data/profile'
+import { siteState as site } from '../stores/site'
 import SectionHead from './SectionHead.vue'
 import PortraitCard from './PortraitCard.vue'
 import { ArrowRight, Location, Message } from '@element-plus/icons-vue'
+
+const profile = site.profile
 </script>
 
 <template>
@@ -84,7 +86,7 @@ import { ArrowRight, Location, Message } from '@element-plus/icons-vue'
 <style scoped>
 .about {
   background:
-    radial-gradient(60% 45% at 8% 24%, rgba(215, 163, 107, 0.045), transparent 70%),
+    radial-gradient(60% 45% at 8% 24%, rgba(168, 91, 46, 0.05), transparent 70%),
     var(--bg);
   border-top: 1px solid var(--line);
 }
@@ -110,12 +112,12 @@ import { ArrowRight, Location, Message } from '@element-plus/icons-vue'
 }
 
 .about__now .mono {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--dim);
 }
 
 .about__now p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--paper-2);
   letter-spacing: 0.02em;
 }
@@ -123,7 +125,7 @@ import { ArrowRight, Location, Message } from '@element-plus/icons-vue'
 .about__lead {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(30px, 3.2vw, 48px);
+  font-size: clamp(34px, 3.4vw, 52px);
   line-height: 1.42;
   letter-spacing: -0.01em;
   color: var(--paper);
@@ -137,7 +139,7 @@ import { ArrowRight, Location, Message } from '@element-plus/icons-vue'
 }
 
 .about__text p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 2.05;
   color: var(--paper-2);
 }
@@ -164,16 +166,16 @@ a.contact-row:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 128px;
+  width: 136px;
   flex-shrink: 0;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
+  font-size: 10px;
+  letter-spacing: 0.16em;
   color: var(--dim);
 }
 
 .contact-row__k .el-icon {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--accent);
 }
 
@@ -186,7 +188,7 @@ a.contact-row:hover {
 
 .contact-row__v {
   flex: 1;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.02em;
   color: var(--paper);
 }
@@ -226,7 +228,7 @@ a.contact-row:hover .contact-row__arrow {
 
 .stat__value {
   font-family: var(--serif);
-  font-size: clamp(42px, 4.4vw, 64px);
+  font-size: clamp(46px, 4.5vw, 68px);
   line-height: 1;
   color: var(--paper);
   font-variant-numeric: tabular-nums;
@@ -235,15 +237,15 @@ a.contact-row:hover .contact-row__arrow {
 .stat__label {
   margin-top: 10px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   color: var(--paper-2);
 }
 
 .stat__note {
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.06em;
   color: var(--dim);
 }
 
@@ -286,20 +288,20 @@ a.contact-row:hover .contact-row__arrow {
 
 .trace__year {
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.16em;
+  font-size: 10px;
+  letter-spacing: 0.14em;
   color: var(--accent);
 }
 
 .trace__title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--paper);
   line-height: 1.5;
 }
 
 .trace__note {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--dim);
   letter-spacing: 0.02em;
 }
@@ -364,3 +366,5 @@ a.contact-row:hover .contact-row__arrow {
   }
 }
 </style>
+
+

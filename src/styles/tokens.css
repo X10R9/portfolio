@@ -1,26 +1,26 @@
 :root {
-  /* Surfaces — charcoal with a cold cast, deliberately a few steps above pure black */
-  --bg: #151a1e;
-  --bg-deep: #101417;
-  --bg-soft: #171d21;
-  --card: #1a2126;
-  --card-hover: #1f272d;
+  /* Surfaces — warm paper, light but not pure white */
+  --bg: #f2f0ea;
+  --bg-deep: #e9e6de;
+  --bg-soft: #f8f6f1;
+  --card: #fbfaf6;
+  --card-hover: #ffffff;
 
   /* Ink */
-  --paper: #ece9e1;
-  --paper-2: #c7c3b9;
-  --muted: #8e9498;
-  --dim: #7f868a;
+  --paper: #1c1f1f;
+  --paper-2: #3e4341;
+  --muted: #6c716f;
+  --dim: #767c79;
 
   /* Lines */
-  --line: rgba(236, 233, 225, 0.09);
-  --line-2: rgba(236, 233, 225, 0.16);
-  --line-3: rgba(236, 233, 225, 0.28);
+  --line: rgba(28, 31, 31, 0.1);
+  --line-2: rgba(28, 31, 31, 0.18);
+  --line-3: rgba(28, 31, 31, 0.3);
 
-  /* Accent — instrument copper */
-  --accent: #d7a36b;
-  --accent-soft: rgba(215, 163, 107, 0.14);
-  --accent-line: rgba(215, 163, 107, 0.38);
+  /* Accent — burnt copper, readable on paper */
+  --accent: #a85b2e;
+  --accent-soft: rgba(168, 91, 46, 0.12);
+  --accent-line: rgba(168, 91, 46, 0.4);
 
   /* Type */
   --serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;

@@ -1,5 +1,5 @@
 <script setup>
-import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, watchEffect } from 'vue'
 import { Top } from '@element-plus/icons-vue'
 import SiteNav from './components/SiteNav.vue'
 import HeroSection from './components/HeroSection.vue'
@@ -7,12 +7,22 @@ import AboutSection from './components/AboutSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import ProjectDialog from './components/ProjectDialog.vue'
+import SiteCursor from './components/SiteCursor.vue'
+import { loadSite, siteState, subscribeSiteUpdates } from './stores/site'
 
 const activeProject = ref(null)
 let observer
+let unsubscribe
+
+watchEffect(() => {
+  document.title = `${siteState.profile.name} · 物联网工程 / 作品集 2026`
+})
+
+function collectReveals() {
+  document.querySelectorAll('[data-reveal]:not(.is-in)').forEach((el) => observer.observe(el))
+}
 
 onMounted(async () => {
-  await nextTick()
   observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -24,10 +34,22 @@ onMounted(async () => {
     },
     { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
   )
-  document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el))
+
+  await loadSite()
+  await nextTick()
+  collectReveals()
+
+  unsubscribe = subscribeSiteUpdates(async () => {
+    await loadSite({ force: true })
+    await nextTick()
+    collectReveals()
+  })
 })
 
-onBeforeUnmount(() => observer?.disconnect())
+onBeforeUnmount(() => {
+  observer?.disconnect()
+  unsubscribe?.()
+})
 </script>
 
 <template>
@@ -37,6 +59,7 @@ onBeforeUnmount(() => observer?.disconnect())
     <div class="site-frame__inner" />
   </div>
 
+  <SiteCursor />
   <SiteNav />
 
   <main id="main">

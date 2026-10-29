@@ -6,7 +6,7 @@
 
 html {
   background: var(--bg);
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 20px);
   -webkit-font-smoothing: antialiased;
@@ -19,26 +19,27 @@ body {
   background: var(--bg);
   color: var(--paper);
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.85;
   font-weight: 400;
   overflow-x: hidden;
 }
 
 body::before {
-  /* Film grain, kept barely visible */
+  /* Paper grain, kept barely visible */
   content: '';
   position: fixed;
   inset: -50%;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
   background: var(--accent);
-  color: #14100c;
+  color: #fffaf3;
 }
 
 a {
@@ -89,7 +90,7 @@ ol {
   background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a3136;
+  background: #c9c4ba;
   border: 3px solid var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -121,13 +122,13 @@ ol {
 .site-frame__inner {
   width: min(var(--container), calc(100% - 32px));
   height: 100%;
-  border-inline: 1px solid rgba(236, 233, 225, 0.045);
+  border-inline: 1px solid rgba(28, 31, 31, 0.055);
 }
 
 /* Type helpers */
 .mono {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
@@ -180,14 +181,14 @@ ol {
 
 .sec-head__index {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--accent);
 }
 
 .sec-head__en {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.22em;
   color: var(--paper);
   text-transform: uppercase;
@@ -195,7 +196,7 @@ ol {
 
 .sec-head__note {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   color: var(--dim);
   text-transform: uppercase;
@@ -213,15 +214,15 @@ ol {
 .sec-head__title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(38px, 4.4vw, 66px);
+  font-size: clamp(42px, 4.6vw, 72px);
   line-height: 1.12;
   letter-spacing: -0.015em;
   color: var(--paper);
 }
 
 .sec-head__desc {
-  max-width: 420px;
-  font-size: 14px;
+  max-width: 460px;
+  font-size: 15px;
   line-height: 1.9;
   color: var(--muted);
   padding-bottom: 6px;
@@ -230,13 +231,13 @@ ol {
 /* Buttons */
 .btn.el-button {
   --el-button-hover-bg-color: transparent;
-  height: 54px;
+  height: 56px;
   margin: 0;
-  padding: 0 26px;
+  padding: 0 28px;
   border-radius: 2px;
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition:
     background 0.35s var(--ease),
@@ -251,14 +252,14 @@ ol {
 .btn--solid.el-button {
   background: var(--paper);
   border-color: var(--paper);
-  color: #12161a;
+  color: var(--bg);
 }
 
 .btn--solid.el-button:hover,
 .btn--solid.el-button:focus {
   background: var(--accent);
   border-color: var(--accent);
-  color: #14100c;
+  color: #fffaf3;
 }
 
 .btn--ghost.el-button {
@@ -276,14 +277,14 @@ ol {
 
 .btn .el-icon {
   margin-left: 10px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .btn .btn__pre,
 .btn .contact__pre {
   margin-right: 9px;
   margin-left: 0;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* Reveal */
@@ -332,8 +333,8 @@ ol {
     max-width: 100%;
   }
   .btn.el-button {
-    height: 48px;
-    padding: 0 20px;
-    font-size: 11px;
+    height: 50px;
+    padding: 0 22px;
+    font-size: 12px;
   }
 }

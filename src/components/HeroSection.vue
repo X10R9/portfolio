@@ -1,14 +1,24 @@
-<script setup>
+﻿<script setup>
 import { onMounted, ref } from 'vue'
 import { ArrowDown, CopyDocument } from '@element-plus/icons-vue'
-import { profile } from '../data/profile'
+import { siteState as site } from '../stores/site'
 import { useCopyEmail } from '../composables/useCopyEmail'
 
 const videoRef = ref(null)
-const { copied, copy: copyEmail } = useCopyEmail(profile.email)
+const heroRef = ref(null)
+const profile = site.profile
+const { copied, copy: copyEmail } = useCopyEmail(() => profile.email)
 
 function scrollToWork() {
   document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+function onMove(event) {
+  const el = heroRef.value
+  if (!el) return
+  const rect = el.getBoundingClientRect()
+  el.style.setProperty('--mx', `${event.clientX - rect.left}px`)
+  el.style.setProperty('--my', `${event.clientY - rect.top}px`)
 }
 
 onMounted(() => {
@@ -22,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="home" class="hero">
+  <section id="home" ref="heroRef" class="hero" @mousemove="onMove">
     <div class="hero__media" aria-hidden="true">
       <video
         ref="videoRef"
@@ -37,6 +47,7 @@ onMounted(() => {
         <source src="/media/hero-field.webm" type="video/webm" />
       </video>
       <div class="hero__veil" />
+      <div class="hero__light" />
     </div>
 
     <div class="hero__inner container">
@@ -94,15 +105,18 @@ onMounted(() => {
 
 <style scoped>
 .hero {
+  --mx: 60%;
+  --my: 45%;
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: var(--bg-deep);
+  background: var(--bg);
 }
 
 .hero__media,
 .hero__video,
-.hero__veil {
+.hero__veil,
+.hero__light {
   position: absolute;
   inset: 0;
 }
@@ -115,15 +129,25 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  filter: saturate(0.92) contrast(1.02);
+  opacity: 0.96;
+  filter: saturate(0.9) contrast(1);
 }
 
 .hero__veil {
   background:
-    linear-gradient(90deg, rgba(16, 20, 23, 0.94) 0%, rgba(16, 20, 23, 0.64) 38%, rgba(16, 20, 23, 0.12) 74%, rgba(16, 20, 23, 0.48) 100%),
-    linear-gradient(0deg, var(--bg) 0%, rgba(21, 26, 30, 0) 34%),
-    radial-gradient(120% 90% at 58% 42%, rgba(10, 13, 15, 0) 30%, rgba(10, 13, 15, 0.42) 100%);
+    linear-gradient(90deg, rgba(242, 240, 234, 0.97) 0%, rgba(242, 240, 234, 0.82) 38%, rgba(242, 240, 234, 0.18) 74%, rgba(242, 240, 234, 0.5) 100%),
+    linear-gradient(0deg, var(--bg) 0%, rgba(242, 240, 234, 0) 36%),
+    radial-gradient(120% 90% at 58% 42%, rgba(242, 240, 234, 0) 30%, rgba(242, 240, 234, 0.35) 100%);
+}
+
+.hero__light {
+  z-index: 1;
+  background: radial-gradient(
+    460px circle at var(--mx) var(--my),
+    rgba(168, 91, 46, 0.1),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .hero__inner {
@@ -150,14 +174,14 @@ onMounted(() => {
   align-items: center;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   color: var(--paper-2);
 }
 
 .hero__dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
 }
@@ -167,7 +191,7 @@ onMounted(() => {
 }
 
 .hero__coord {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--dim);
 }
 
@@ -178,8 +202,8 @@ onMounted(() => {
 .hero__title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(64px, 9.4vw, 152px);
-  line-height: 1.04;
+  font-size: clamp(68px, 9.6vw, 160px);
+  line-height: 1.03;
   letter-spacing: -0.02em;
   color: var(--paper);
 }
@@ -227,8 +251,8 @@ onMounted(() => {
 }
 
 .hero__lede {
-  max-width: 540px;
-  font-size: clamp(14px, 1.05vw, 17px);
+  max-width: 560px;
+  font-size: clamp(15px, 1.1vw, 18px);
   line-height: 1.95;
   color: var(--paper-2);
 }
@@ -255,14 +279,14 @@ onMounted(() => {
   gap: 14px;
   flex-wrap: wrap;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   color: var(--dim);
   text-transform: uppercase;
 }
 
 .hero__meta-sep {
-  color: rgba(236, 233, 225, 0.18);
+  color: rgba(28, 31, 31, 0.22);
 }
 
 .hero__scroll {
@@ -270,7 +294,7 @@ onMounted(() => {
   align-items: center;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.22em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
@@ -336,7 +360,7 @@ onMounted(() => {
     align-items: flex-start;
   }
   .hero__title {
-    font-size: clamp(58px, 10.4vw, 110px);
+    font-size: clamp(60px, 10.4vw, 112px);
   }
   .hero__line--indent {
     padding-left: 0.4em;
@@ -352,7 +376,7 @@ onMounted(() => {
     display: none;
   }
   .hero__title {
-    font-size: clamp(52px, 13vw, 84px);
+    font-size: clamp(54px, 13vw, 86px);
   }
   .hero__actions {
     flex-wrap: wrap;
@@ -366,3 +390,4 @@ onMounted(() => {
   }
 }
 </style>
+

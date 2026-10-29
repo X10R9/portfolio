@@ -1,8 +1,10 @@
 <script setup>
-import { projects, moreWork } from '../data/projects'
+import { siteState as site } from '../stores/site'
 import SectionHead from './SectionHead.vue'
 import ProjectCard from './ProjectCard.vue'
 
+const projects = site.projects
+const moreWork = site.moreWork
 const emit = defineEmits(['open'])
 </script>
 
@@ -50,7 +52,7 @@ const emit = defineEmits(['open'])
 <style scoped>
 .work {
   background:
-    radial-gradient(55% 40% at 92% 12%, rgba(215, 163, 107, 0.05), transparent 68%),
+    radial-gradient(55% 40% at 92% 12%, rgba(168, 91, 46, 0.055), transparent 68%),
     var(--bg-soft);
   border-top: 1px solid var(--line);
 }
@@ -87,19 +89,19 @@ const emit = defineEmits(['open'])
 }
 
 .more__item:hover {
-  background: rgba(236, 233, 225, 0.025);
+  background: rgba(28, 31, 31, 0.035);
 }
 
 .more__idx {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   color: var(--dim);
 }
 
 .more__title {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 0.02em;
   color: var(--paper);
   transition: color 0.35s var(--ease);
@@ -111,18 +113,18 @@ const emit = defineEmits(['open'])
 
 .more__meta,
 .more__detail {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
 }
 
 .more__detail {
   color: var(--dim);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .more__year {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   color: var(--dim);
   text-align: right;

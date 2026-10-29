@@ -51,8 +51,12 @@ const gallerySrcs = computed(() =>
         </div>
 
         <div class="dialog__cover">
-          <img :src="project.cover" :alt="project.coverAlt" />
-          <span class="dialog__cover-tag mono">{{ project.coverAlt }}</span>
+          <img v-if="project.cover" :src="project.cover" :alt="project.coverAlt" />
+          <div v-else class="dialog__cover-empty">
+            <span>{{ project.title }}</span>
+            <em>COVER / PENDING</em>
+          </div>
+          <span v-if="project.coverAlt" class="dialog__cover-tag mono">{{ project.coverAlt }}</span>
         </div>
 
         <div class="dialog__meta">
@@ -145,12 +149,12 @@ const gallerySrcs = computed(() =>
   height: 58px;
   padding: 0 28px;
   border-bottom: 1px solid var(--line);
-  background: rgba(21, 26, 30, 0.92);
+  background: rgba(248, 246, 241, 0.94);
   backdrop-filter: blur(14px);
 }
 
 .dialog__bar .mono {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--dim);
 }
 
@@ -159,8 +163,8 @@ const gallerySrcs = computed(() =>
   align-items: center;
   gap: 8px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
+  font-size: 10px;
+  letter-spacing: 0.16em;
   color: var(--muted);
   transition: color 0.3s var(--ease);
 }
@@ -180,7 +184,7 @@ const gallerySrcs = computed(() =>
 }
 
 .dialog__scroll::-webkit-scrollbar-thumb {
-  background: #2c3439;
+  background: #cfc9be;
   border: 2px solid var(--bg-soft);
 }
 
@@ -192,8 +196,8 @@ const gallerySrcs = computed(() =>
   display: flex;
   gap: 16px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.2em;
+  font-size: 10px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--dim);
 }
@@ -206,7 +210,7 @@ const gallerySrcs = computed(() =>
   margin-top: 16px;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(40px, 5vw, 68px);
+  font-size: clamp(44px, 5vw, 72px);
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--paper);
@@ -214,7 +218,7 @@ const gallerySrcs = computed(() =>
 
 .dialog__subtitle {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: 0.04em;
   color: var(--muted);
 }
@@ -222,7 +226,7 @@ const gallerySrcs = computed(() =>
 .dialog__summary {
   max-width: 720px;
   margin-top: 24px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.95;
   color: var(--paper-2);
 }
@@ -241,13 +245,39 @@ const gallerySrcs = computed(() =>
   object-fit: cover;
 }
 
+.dialog__cover-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 2.15 / 1;
+  padding: clamp(24px, 4vw, 48px);
+  background: linear-gradient(160deg, #fbfaf6, #e9e6de);
+}
+
+.dialog__cover-empty span {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 56px);
+  color: var(--paper);
+}
+
+.dialog__cover-empty em {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--dim);
+}
+
 .dialog__cover-tag {
   position: absolute;
   left: 16px;
   bottom: 12px;
   max-width: 60%;
-  font-size: 9px;
-  color: rgba(236, 233, 225, 0.6);
+  padding: 6px 10px;
+  background: rgba(242, 240, 234, 0.92);
+  border: 1px solid var(--line);
+  font-size: 10px;
+  color: var(--paper-2);
   text-transform: none;
   letter-spacing: 0.04em;
 }
@@ -268,13 +298,13 @@ const gallerySrcs = computed(() =>
 }
 
 .meta-item .mono {
-  font-size: 8px;
+  font-size: 9px;
   color: var(--dim);
 }
 
 .meta-item strong {
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--paper);
   line-height: 1.6;
 }
@@ -299,9 +329,9 @@ const gallerySrcs = computed(() =>
   gap: 12px;
   margin-bottom: 12px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   color: var(--accent);
   text-transform: uppercase;
 }
@@ -314,7 +344,7 @@ const gallerySrcs = computed(() =>
 }
 
 .block p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 2;
   color: var(--paper-2);
 }
@@ -325,7 +355,7 @@ const gallerySrcs = computed(() =>
 }
 
 .notes__label {
-  font-size: 8px;
+  font-size: 9px;
   color: var(--dim);
 }
 
@@ -338,7 +368,7 @@ const gallerySrcs = computed(() =>
   gap: 16px;
   padding: 11px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.75;
   color: var(--paper-2);
 }
@@ -347,7 +377,7 @@ const gallerySrcs = computed(() =>
   flex-shrink: 0;
   padding-top: 3px;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.1em;
   color: var(--accent);
 }
@@ -379,7 +409,7 @@ const gallerySrcs = computed(() =>
 
 .fact strong {
   font-family: var(--serif);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 1.1;
   color: var(--paper);
@@ -387,8 +417,8 @@ const gallerySrcs = computed(() =>
 
 .fact span {
   font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 0.12em;
+  font-size: 9px;
+  letter-spacing: 0.1em;
   color: var(--dim);
 }
 
@@ -399,7 +429,7 @@ const gallerySrcs = computed(() =>
 }
 
 .gallery__label {
-  font-size: 8px;
+  font-size: 9px;
   color: var(--dim);
   margin-bottom: 2px;
 }
@@ -412,7 +442,7 @@ const gallerySrcs = computed(() =>
 }
 
 .dialog__note {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.9;
   color: var(--dim);
   padding-top: 18px;
@@ -428,7 +458,7 @@ const gallerySrcs = computed(() =>
 }
 
 .dialog__foot .mono {
-  font-size: 8px;
+  font-size: 9px;
   color: var(--dim);
 }
 
@@ -436,7 +466,7 @@ const gallerySrcs = computed(() =>
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
@@ -484,3 +514,4 @@ const gallerySrcs = computed(() =>
   }
 }
 </style>
+

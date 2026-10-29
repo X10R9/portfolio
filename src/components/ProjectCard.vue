@@ -20,9 +20,11 @@ function open() {
       type="button"
       :style="{ aspectRatio: project.aspect || '16 / 10' }"
       :aria-label="`查看项目：${project.title}`"
+      data-cursor="VIEW"
       @click="open"
     >
       <img
+        v-if="project.cover"
         class="project__img"
         :src="project.cover"
         :alt="project.coverAlt"
@@ -30,6 +32,10 @@ function open() {
         loading="lazy"
         decoding="async"
       />
+      <span v-else class="project__placeholder" aria-hidden="true">
+        <span>{{ project.title }}</span>
+        <em>COVER / PENDING</em>
+      </span>
       <span class="project__shade" aria-hidden="true" />
       <span class="project__index" aria-hidden="true">{{ project.index }}</span>
       <span class="project__view">
@@ -60,7 +66,7 @@ function open() {
 
       <div class="project__foot">
         <span class="project__role mono">{{ project.role }}</span>
-        <button class="project__cta" type="button" @click="open">
+        <button class="project__cta" type="button" data-cursor="OPEN" @click="open">
           <span>项目详情</span>
           <span class="project__cta-line" aria-hidden="true" />
           <el-icon><ArrowRight /></el-icon>
@@ -109,7 +115,7 @@ function open() {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.9) saturate(0.78);
+  filter: brightness(0.97) saturate(0.9);
   transform: scale(1.001);
   transition:
     transform 1.1s var(--ease),
@@ -119,14 +125,41 @@ function open() {
 .project__shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 13, 15, 0.18) 0%, rgba(10, 13, 15, 0) 30%, rgba(10, 13, 15, 0.32) 100%);
+  background: linear-gradient(180deg, rgba(28, 31, 31, 0.07) 0%, rgba(28, 31, 31, 0) 32%, rgba(28, 31, 31, 0.08) 100%);
   transition: opacity 0.6s var(--ease);
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .project__media:hover .project__img {
   transform: scale(1.035);
-  filter: brightness(1) saturate(0.95);
+  filter: brightness(1) saturate(1);
+}
+
+.project__placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: clamp(24px, 3vw, 44px);
+  background:
+    radial-gradient(80% 60% at 92% 8%, rgba(168, 91, 46, 0.1), transparent 60%),
+    linear-gradient(160deg, #fbfaf6, #e9e6de);
+}
+
+.project__placeholder span {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.2vw, 50px);
+  line-height: 1.15;
+  color: var(--paper);
+}
+
+.project__placeholder em {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--dim);
 }
 
 .project__media:hover .project__shade {
@@ -136,12 +169,18 @@ function open() {
 .project__index {
   position: absolute;
   left: 20px;
-  top: 16px;
+  bottom: 18px;
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   color: var(--paper);
-  mix-blend-mode: difference;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 30px;
+  background: rgba(242, 240, 234, 0.9);
+  border: 1px solid rgba(28, 31, 31, 0.14);
+  backdrop-filter: blur(8px);
 }
 
 .project__view {
@@ -152,12 +191,12 @@ function open() {
   align-items: center;
   gap: 10px;
   padding: 9px 14px;
-  background: rgba(16, 20, 23, 0.72);
-  border: 1px solid rgba(236, 233, 225, 0.18);
+  background: rgba(242, 240, 234, 0.92);
+  border: 1px solid rgba(28, 31, 31, 0.16);
   backdrop-filter: blur(10px);
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.2em;
+  font-size: 10px;
+  letter-spacing: 0.18em;
   color: var(--paper);
   opacity: 0;
   transform: translateY(8px);
@@ -201,8 +240,8 @@ function open() {
   align-items: center;
   gap: 14px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
+  font-size: 10px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -217,14 +256,14 @@ function open() {
 .project__type::before {
   content: '/';
   margin-right: 14px;
-  color: rgba(236, 233, 225, 0.2);
+  color: rgba(28, 31, 31, 0.24);
 }
 
 .project__title {
   margin-top: 18px;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(32px, 3.3vw, 50px);
+  font-size: clamp(36px, 3.5vw, 54px);
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--paper);
@@ -235,7 +274,7 @@ function open() {
   margin-top: 10px;
   font-family: var(--sans);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -244,7 +283,7 @@ function open() {
 .project__summary {
   margin-top: 22px;
   max-width: 460px;
-  font-size: 14px;
+  font-size: 15.5px;
   line-height: 1.95;
   color: var(--paper-2);
 }
@@ -268,7 +307,7 @@ function open() {
 }
 
 .project__role {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--dim);
 }
 
@@ -279,8 +318,8 @@ function open() {
   gap: 9px;
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--paper);
   transition: color 0.35s var(--ease);
@@ -326,3 +365,4 @@ function open() {
   }
 }
 </style>
+

@@ -1,6 +1,8 @@
 <script setup>
-import { profile } from '../data/profile'
+import { siteState as site } from '../stores/site'
 import PortraitScan from './PortraitScan.vue'
+
+const profile = site.profile
 </script>
 
 <template>
@@ -40,8 +42,8 @@ import PortraitScan from './PortraitScan.vue'
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 78% 12%, rgba(215, 163, 107, 0.14), transparent 55%),
-    linear-gradient(165deg, #1b2227 0%, #12171a 62%, #0f1316 100%);
+    radial-gradient(120% 90% at 78% 12%, rgba(168, 91, 46, 0.14), transparent 55%),
+    linear-gradient(165deg, #fbfaf6 0%, #f1eee6 62%, #e7e3da 100%);
   border: 1px solid var(--line);
 }
 
@@ -56,8 +58,8 @@ import PortraitScan from './PortraitScan.vue'
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(236, 233, 225, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(236, 233, 225, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(28, 31, 31, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 31, 31, 0.06) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 100%);
 }
@@ -67,7 +69,7 @@ import PortraitScan from './PortraitScan.vue'
   inset: -20% -20% auto auto;
   width: 70%;
   aspect-ratio: 1;
-  background: radial-gradient(circle, rgba(215, 163, 107, 0.16), transparent 68%);
+  background: radial-gradient(circle, rgba(168, 91, 46, 0.16), transparent 68%);
   filter: blur(10px);
 }
 
@@ -140,3 +142,5 @@ import PortraitScan from './PortraitScan.vue'
   color: var(--dim);
 }
 </style>
+
+

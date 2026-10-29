@@ -1,0 +1,345 @@
+{
+  "profile": {
+    "name": "徐茹",
+    "latin": "XU RU",
+    "monogram": "XR",
+    "grade": "2024 级",
+    "school": "大连民族大学",
+    "major": "物联网工程",
+    "location": "大连 · 中国",
+    "coords": "38.91°N / 121.60°E",
+    "email": "X10R9@outlook.com",
+    "portrait": "",
+    "availability": "开放课程合作与项目交流",
+    "lede": "徐茹，大连民族大学物联网工程 2024 级。从传感器与嵌入式，到平台与界面，把课程里的想法做到能运行。",
+    "intro": [
+      "我在读物联网工程，关心的是「设备如何被理解」：从 LM35 输出的一小段电压、单片机读到的一帧数据，到平台上一条可检索的记录，最后变成别人能看懂的一张界面。",
+      "课程项目之外，我在补前端和机器学习的基础。做东西的习惯是先让它跑起来，再回头补原理；留下的每个项目都尽量能演示、能复现，而不只是交一次作业。"
+    ],
+    "focus": [
+      "嵌入式采集",
+      "物联网平台",
+      "端侧智能"
+    ],
+    "current": "Vue 3 · Element Plus · 小语言模型",
+    "stats": [
+      {
+        "value": "04",
+        "label": "精选项目",
+        "note": "Selected works"
+      },
+      {
+        "value": "03",
+        "label": "技术方向",
+        "note": "Embedded / IoT / Web"
+      },
+      {
+        "value": "02",
+        "label": "课程设计",
+        "note": "Coursework"
+      },
+      {
+        "value": "01",
+        "label": "浏览器扩展",
+        "note": "Edge · Manifest V3"
+      }
+    ],
+    "timeline": [
+      {
+        "year": "2026",
+        "title": "云枢 IoT · 智能设备管理平台",
+        "note": "独立完成 · Vue 3 + Element Plus"
+      },
+      {
+        "year": "2026.03",
+        "title": "数显温度计",
+        "note": "电子技术课程设计 · 2 人合作"
+      },
+      {
+        "year": "2026",
+        "title": "电商图片提取助手",
+        "note": "独立完成 · Edge 扩展"
+      },
+      {
+        "year": "2026",
+        "title": "软件实训 · 小语言模型",
+        "note": "课程实践 · Tokenizer / 预训练 / LoRA"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "yunshu",
+      "index": "01",
+      "title": "云枢 IoT",
+      "subtitle": "智能设备管理平台",
+      "type": "课程实践 / Web",
+      "year": "2026",
+      "role": "独立完成",
+      "stack": [
+        "Vue 3",
+        "Element Plus",
+        "Vite"
+      ],
+      "summary": "把设备、告警、用户和权限收进同一套界面，一个带数据大屏的物联网设备管理演示平台。",
+      "cover": "/images/projects/yunshu.webp",
+      "coverAlt": "云枢 IoT 数据大屏，显示设备统计、类型分布与告警概览",
+      "coverPosition": "50% 50%",
+      "gallery": [
+        {
+          "src": "/images/projects/yunshu-devices.webp",
+          "alt": "云枢 IoT 设备管理列表"
+        },
+        {
+          "src": "/images/projects/yunshu-home.webp",
+          "alt": "云枢 IoT 门户首页"
+        }
+      ],
+      "facts": [
+        {
+          "value": "09",
+          "label": "路由页面"
+        },
+        {
+          "value": "03",
+          "label": "角色权限"
+        },
+        {
+          "value": "08",
+          "label": "演示设备"
+        },
+        {
+          "value": "00",
+          "label": "后端依赖"
+        }
+      ],
+      "highlights": [
+        "路由守卫按角色拦截，普通用户看不到管理入口",
+        "设备、告警、用户与配置全部持久化在 localStorage",
+        "图表与状态字段使用可手动刷新的模拟遥测数据"
+      ],
+      "sections": [
+        {
+          "title": "背景",
+          "body": "课程里做过传感器与采集，但数据最终要落到一个能操作的界面上。我想验证一套完整流程：登录、数据大屏、设备增删改查、告警、用户与系统配置，而不是只交一个仪表盘截图。"
+        },
+        {
+          "title": "做法",
+          "body": "用 Vue 3 + Element Plus 搭建，hash 路由配合路由守卫按角色隔离权限；设备、用户、告警与系统配置持久化在 localStorage 中，刷新后仍可继续操作。图表、状态与设备字段使用模拟遥测数据，可以手动刷新。"
+        },
+        {
+          "title": "结果",
+          "body": "完成 9 个路由页面与管理员、普通用户、运维三类角色。普通用户只能看到归属设备，直接访问管理页面会被守卫拦回；管理员可以维护设备、账号与告警。项目不依赖后端，打开就能演示。"
+        }
+      ]
+    },
+    {
+      "id": "thermometer",
+      "index": "02",
+      "title": "数显温度计",
+      "subtitle": "纯硬件温度测量与超温控制",
+      "type": "电子技术课程设计",
+      "year": "2026.03",
+      "role": "电路设计 · 仿真 · 焊接调试",
+      "stack": [
+        "LM35",
+        "TC7107",
+        "LM339",
+        "Proteus"
+      ],
+      "summary": "不写一行代码的温度计：LM35 采集、TC7107 转换显示、LM339 做阈值判断，再加一路风扇自动降温。",
+      "cover": "/images/projects/thermometer.webp",
+      "coverAlt": "数显温度计实物电路板，包含两位数码管、继电器与风扇",
+      "coverPosition": "50% 48%",
+      "aspect": "4 / 3",
+      "gallery": [
+        {
+          "src": "/images/projects/thermometer-pcb.webp",
+          "alt": "数显温度计 PCB 布局图"
+        }
+      ],
+      "facts": [
+        {
+          "value": "0–99",
+          "label": "显示范围 ℃"
+        },
+        {
+          "value": "02",
+          "label": "位 LED 数码管"
+        },
+        {
+          "value": "01",
+          "label": "路风扇控制"
+        },
+        {
+          "value": "02",
+          "label": "人合作"
+        }
+      ],
+      "highlights": [
+        "分模块仿真：采集、调理、ADC 转换、报警与显示",
+        "阈值在 0–99℃ 内连续可调，回差避免临界抖动",
+        "实物调试重点处理基准漂移与数码管跳变"
+      ],
+      "sections": [
+        {
+          "title": "背景",
+          "body": "电子技术课程设计，要求在不使用单片机的前提下，完成温度采集、数字显示与超温控制。相比软件方案，纯硬件的难点在于每一级信号都要自己算清楚。"
+        },
+        {
+          "title": "做法",
+          "body": "LM35 以 10mV/℃ 输出与摄氏温度成正比的电压，经运放调理后送入 TC7107 双积分 ADC，直接驱动两位共阳极数码管；LM339 比较器配合电位器设定阈值，超温时触发声光报警并驱动继电器启动风扇。先在 Proteus 中分模块仿真，再焊接实物调试。"
+        },
+        {
+          "title": "结果",
+          "body": "实现 0–99℃ 连续显示，阈值可在量程内调节，超温时风扇自动启动、温度回落自动解除。调试中处理了数码管跳变、基准电压漂移和比较器阈值抖动。LM35 在 0–100℃ 的标称精度为 ±0.5℃。"
+        }
+      ]
+    },
+    {
+      "id": "shopsnap",
+      "index": "03",
+      "title": "ShopSnap",
+      "subtitle": "电商图片提取助手",
+      "type": "浏览器扩展 / Edge",
+      "year": "2026",
+      "role": "独立完成",
+      "stack": [
+        "Manifest V3",
+        "JavaScript",
+        "Shadow DOM"
+      ],
+      "summary": "在淘宝、京东、拼多多的商品页一键收集主图、SKU 图与详情长图，筛选后批量下载为 PNG。",
+      "cover": "/images/projects/shopsnap-hero.webp",
+      "coverAlt": "ShopSnap 扩展介绍页，展示商品页提取按钮与批量下载流程",
+      "coverPosition": "50% 50%",
+      "gallery": [
+        {
+          "src": "/images/projects/shopsnap.webp",
+          "alt": "ShopSnap 图片选择页与筛选工具栏"
+        }
+      ],
+      "facts": [
+        {
+          "value": "03",
+          "label": "适配平台"
+        },
+        {
+          "value": "12",
+          "label": "懒加载属性"
+        },
+        {
+          "value": "00",
+          "label": "数据上传"
+        },
+        {
+          "value": "01",
+          "label": "键批量下载"
+        }
+      ],
+      "highlights": [
+        "Shadow DOM 隔离悬浮按钮，不污染也不被站点样式污染",
+        "覆盖 img、srcset、CSS 背景图与页面内联数据",
+        "全部在本地完成筛选与转 PNG，不上传任何数据"
+      ],
+      "sections": [
+        {
+          "title": "背景",
+          "body": "做商品素材归档时，最耗时的不是选图，而是把图一张张弄下来：截图会被压缩，右键保存要点几十次，有些图还藏在懒加载和 CSS 背景里，根本点不到。"
+        },
+        {
+          "title": "做法",
+          "body": "用 Manifest V3 与原生 JavaScript 实现。内容脚本注入 Shadow DOM 悬浮按钮并自动滚动触发懒加载；service worker 负责结果暂存与跨域取图；图片选择页在本地完成筛选、预览、转 PNG 和批量下载。提取时归一化 URL，过滤占位图与装饰图。"
+        },
+        {
+          "title": "结果",
+          "body": "支持淘宝 / 天猫、京东、拼多多三个平台，覆盖 12 种懒加载属性与 srcset、背景图等来源。所有处理都在浏览器本地完成，不上传图片或浏览数据，也没有远程代码。"
+        }
+      ]
+    },
+    {
+      "id": "minimind",
+      "index": "04",
+      "title": "MiniMind",
+      "subtitle": "小型语言模型训练实验",
+      "type": "软件实训 / LLM",
+      "year": "2026",
+      "role": "独立完成 · 课程骨架",
+      "stack": [
+        "PyTorch",
+        "Tokenizer",
+        "LoRA"
+      ],
+      "summary": "跟着课程把数据、分词、预训练、SFT 与 LoRA 推理完整走一遍，也记录 loss 曲线背后踩过的坑。",
+      "cover": "/images/projects/minimind.webp",
+      "coverAlt": "小型语言模型预训练 logits loss、辅助 loss 与学习率曲线",
+      "coverPosition": "50% 50%",
+      "aspect": "16 / 10",
+      "gallery": [],
+      "facts": [
+        {
+          "value": "03",
+          "label": "训练阶段"
+        },
+        {
+          "value": "768",
+          "label": "隐藏维度"
+        },
+        {
+          "value": "01",
+          "label": "套分词器"
+        },
+        {
+          "value": "01",
+          "label": "条训练流程"
+        }
+      ],
+      "highlights": [
+        "先做数据去重、长度过滤与训练/验证切分，再动模型",
+        "tokenizer、特殊 token 与 chat template 固定成一份",
+        "同时看 loss、固定提示词输出与验证集表现"
+      ],
+      "sections": [
+        {
+          "title": "背景",
+          "body": "软件实训要求从零训练一个小语言模型。我想搞清楚的不只是「跑通」，而是文本从分词、预训练到能接着说下去，中间究竟经过了哪些步骤。"
+        },
+        {
+          "title": "做法",
+          "body": "先做数据去重、长度过滤与训练/验证切分，再训练 tokenizer 并固定词表、特殊 token 与 chat template；用 PyTorch 跑预训练、SFT 与 LoRA，训练日志记录学习率、batch、序列长度和验证 loss。"
+        },
+        {
+          "title": "结果",
+          "body": "跑通了一条可重复执行的训练与推理流程：准备数据、训练 tokenizer、启动训练、保存 checkpoint、加载模型生成。输出还不稳定，有时重复、有时提前结束，目前正在补固定评测集与提示词对比。"
+        }
+      ]
+    }
+  ],
+  "moreWork": [
+    {
+      "title": "BPE 分词器",
+      "meta": "Python · tokenizers",
+      "year": "2026",
+      "detail": "1000 词表 · 2.93 字符/token"
+    },
+    {
+      "title": "简单分词器",
+      "meta": "Python · 正则",
+      "year": "2026",
+      "detail": "词级切分与未知词处理"
+    },
+    {
+      "title": "数字计数器",
+      "meta": "Proteus · 数字电路",
+      "year": "2026",
+      "detail": "仿真与实物验证"
+    },
+    {
+      "title": "Transformer 注解",
+      "meta": "PyTorch",
+      "year": "2026",
+      "detail": "39KB 逐行中文注释"
+    }
+  ],
+  "updatedAt": "2026-10-29"
+}

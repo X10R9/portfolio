@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "api": "node server/index.mjs --api-only",
+    "serve": "node server/index.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },

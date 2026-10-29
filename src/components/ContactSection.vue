@@ -1,10 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { CopyDocument, Promotion } from '@element-plus/icons-vue'
-import { profile } from '../data/profile'
+import { siteState as site } from '../stores/site'
 import { useCopyEmail } from '../composables/useCopyEmail'
 
-const { copied, copy } = useCopyEmail(profile.email)
+const profile = site.profile
+const { copied, copy } = useCopyEmail(() => profile.email)
 const sectionRef = ref(null)
 
 function onMove(event) {
@@ -49,7 +50,7 @@ function onMove(event) {
             也欢迎聊聊你正在做的事，或者想一起做的事。
           </p>
 
-          <a class="contact__email" :href="`mailto:${profile.email}`">
+          <a class="contact__email" :href="`mailto:${profile.email}`" data-cursor="MAIL">
             <span class="contact__email-v">{{ profile.email }}</span>
             <span class="contact__email-line" aria-hidden="true" />
           </a>
@@ -86,6 +87,7 @@ function onMove(event) {
         <span>© 2026 {{ profile.name }} / PORTFOLIO</span>
         <span class="contact__build">VUE 3 · ELEMENT PLUS</span>
         <span>DALIAN · {{ profile.coords }}</span>
+        <a class="contact__admin" href="/?admin=1" data-cursor="EDIT">ADMIN</a>
       </footer>
     </div>
   </section>
@@ -114,7 +116,7 @@ function onMove(event) {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(70% 60% at 10% 90%, rgba(215, 163, 107, 0.08), transparent 62%),
+    radial-gradient(70% 60% at 10% 90%, rgba(168, 91, 46, 0.07), transparent 62%),
     radial-gradient(50% 50% at 90% 0%, rgba(158, 184, 172, 0.045), transparent 70%);
 }
 
@@ -122,8 +124,8 @@ function onMove(event) {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(236, 233, 225, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(236, 233, 225, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(28, 31, 31, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 31, 31, 0.045) 1px, transparent 1px);
   background-size: 120px 120px;
   mask-image: radial-gradient(80% 80% at 50% 50%, #000 30%, transparent 100%);
 }
@@ -133,7 +135,7 @@ function onMove(event) {
   inset: 0;
   background: radial-gradient(
     520px circle at var(--mx) var(--my),
-    rgba(215, 163, 107, 0.075),
+    rgba(168, 91, 46, 0.09),
     transparent 62%
   );
   transition: background 0.2s linear;
@@ -165,8 +167,8 @@ function onMove(event) {
   gap: 16px;
   flex: 1;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  letter-spacing: 0.2em;
   color: var(--paper);
 }
 
@@ -184,8 +186,8 @@ function onMove(event) {
   align-items: center;
   gap: 9px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  letter-spacing: 0.12em;
   color: var(--muted);
   white-space: nowrap;
 }
@@ -211,7 +213,7 @@ function onMove(event) {
 .contact__title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(72px, 9.6vw, 156px);
+  font-size: clamp(76px, 9.8vw, 164px);
   line-height: 1.02;
   letter-spacing: -0.02em;
   color: var(--paper);
@@ -238,8 +240,8 @@ function onMove(event) {
 }
 
 .contact__note {
-  max-width: 460px;
-  font-size: 14px;
+  max-width: 480px;
+  font-size: 15.5px;
   line-height: 2;
   color: var(--muted);
 }
@@ -254,7 +256,7 @@ function onMove(event) {
 
 .contact__email-v {
   font-family: var(--mono);
-  font-size: clamp(18px, 1.75vw, 28px);
+  font-size: clamp(20px, 1.8vw, 30px);
   letter-spacing: 0.02em;
   color: var(--paper);
   transition: color 0.35s var(--ease);
@@ -312,13 +314,13 @@ function onMove(event) {
 }
 
 .contact__meta .mono {
-  font-size: 8px;
+  font-size: 9px;
   color: var(--dim);
 }
 
 .contact__meta strong {
   font-weight: 400;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--paper-2);
 }
@@ -331,8 +333,8 @@ function onMove(event) {
   padding: 18px 0 26px;
   border-top: 1px solid var(--line);
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  letter-spacing: 0.12em;
   color: var(--dim);
   text-transform: uppercase;
 }
@@ -341,13 +343,22 @@ function onMove(event) {
   color: var(--muted);
 }
 
+.contact__admin {
+  color: var(--dim);
+  transition: color 0.3s var(--ease);
+}
+
+.contact__admin:hover {
+  color: var(--accent);
+}
+
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(215, 163, 107, 0.3);
+    box-shadow: 0 0 0 0 rgba(168, 91, 46, 0.3);
   }
   50% {
-    box-shadow: 0 0 0 5px rgba(215, 163, 107, 0);
+    box-shadow: 0 0 0 5px rgba(168, 91, 46, 0);
   }
 }
 
@@ -383,3 +394,5 @@ function onMove(event) {
   }
 }
 </style>
+
+

@@ -1,11 +1,13 @@
 import { onBeforeUnmount, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 
-export function useCopyEmail(email) {
+export function useCopyEmail(emailSource) {
   const copied = ref(false)
   let timer
+  const getEmail = typeof emailSource === 'function' ? emailSource : () => emailSource
 
   async function copy() {
+    const email = getEmail()
     try {
       await navigator.clipboard.writeText(email)
     } catch {
